@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdamV1.01", "AdamV1.01\AdamV1.01.csproj", "{4FDA392F-7568-4CDC-BAD9-A4AA8D40F4B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdamV1.01.Tests", "AdamV1.01.Tests\AdamV1.01.Tests.csproj", "{8F73E736-97AB-4AB8-BDF7-2DBEB47E144F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FDA392F-7568-4CDC-BAD9-A4AA8D40F4B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FDA392F-7568-4CDC-BAD9-A4AA8D40F4B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FDA392F-7568-4CDC-BAD9-A4AA8D40F4B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FDA392F-7568-4CDC-BAD9-A4AA8D40F4B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F73E736-97AB-4AB8-BDF7-2DBEB47E144F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F73E736-97AB-4AB8-BDF7-2DBEB47E144F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F73E736-97AB-4AB8-BDF7-2DBEB47E144F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F73E736-97AB-4AB8-BDF7-2DBEB47E144F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

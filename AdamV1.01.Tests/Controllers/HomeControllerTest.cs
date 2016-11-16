@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using AdamV1._01;
-using AdamV1._01.Controllers;
+using AdamV1.Controllers;
 
 namespace AdamV1._01.Tests.Controllers
 {

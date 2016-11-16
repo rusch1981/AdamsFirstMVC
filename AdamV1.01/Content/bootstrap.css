@@ -405,6 +405,7 @@ p {
 }
 
 .lead {
+    
   margin-bottom: 20px;
   font-size: 16.099999999999998px;
   font-weight: 200;
@@ -4499,9 +4500,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-link:hover {
   color: #333333;
 }
-
+/*navbar background and border colors*/
 .navbar-inverse {
-  background-color: #222222;
+  background-color: #003311;
   border-color: #080808;
 }
 
@@ -4518,7 +4519,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-inverse .navbar-text {
   color: #999999;
 }
-
+/*Navbar text colors  see sevral below too*/
 .navbar-inverse .navbar-nav > li > a {
   color: #999999;
 }
@@ -4934,7 +4935,7 @@ a.list-group-item.active > .badge,
   font-weight: 200;
   line-height: 2.1428571435;
   color: inherit;
-  background-color: #eeeeee;
+  img
 }
 
 .jumbotron h1 {

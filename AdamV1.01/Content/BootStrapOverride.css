@@ -1,0 +1,31 @@
+﻿/*PUT CSS OVERIDES BELOW*/
+
+#BSO_background{
+    background: url("../Images/MandM_Logo.JPG")no-repeat left center fixed;
+    background-size: 100% auto;
+    background-color: #000000;
+    
+    
+    color:#FFFFFF;
+    
+}
+#navbar-inverse{
+    background-color: #000000;
+    border-color: #FFFFFF;
+    color:#FFFFFF;
+}
+#top-padding {
+    padding-top: 150px;
+}
+#bottom-margin {
+    margin-bottom: 0px;
+    padding-bottom:0px;
+}
+footer{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  text-align: center;
+}

@@ -1,5 +1,9 @@
 ﻿/*PUT CSS OVERIDES BELOW*/
 
+#inherit-background{
+    background-color: inherit;
+}
+
 #BSO_background{
     background: url("../Images/MandM_Logo.JPG")no-repeat left center fixed;
     background-size: 100% auto;

@@ -8,11 +8,16 @@
     background: url("../Images/MandM_Logo.JPG")no-repeat left center fixed;
     background-size: 100% auto;
     background-color: #000000;
-    
-    
+    background-position: center top;
     color:#FFFFFF;
-    
 }
+
+#Black_background{
+    background-size: 100% auto;
+     background-color: #000000;
+     color:#FFFFFF;
+ }
+
 #navbar-inverse{
     background-color: #000000;
     border-color: #FFFFFF;
@@ -25,11 +30,17 @@
     margin-bottom: 0px;
     padding-bottom:0px;
 }
-footer{
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 15px;
-  text-align: center;
+
+#footer{
+    min-height:100%;
+    
 }
+
+#button-margin{
+    margin: 0px auto;
+}
+/*.center-on-background{
+    position: absolute;
+    bottom: 8px;
+}*/
+

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Adam Rusch</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body id="BSO_background" class="img-responsive bSO_homepage">
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <div class="navbar-fixed-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                    @* replace the # symbols below with a url to have them link to another page or site. *@
+                    <a href="#">
+                        <img src="../Images/BeveledButton200.png" class="img-responsive" id="botton-margin" alt="Button">
+                    </a>
+                </div>
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                    <a href="#">
+                        <img src="../Images/BeveledButton200.png" class="img-responsive" id="button-margin" alt="Button">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

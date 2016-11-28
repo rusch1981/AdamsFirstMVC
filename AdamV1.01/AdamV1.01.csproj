@@ -231,6 +231,7 @@
     <Content Include="Images\14067747_377606525696656_3871842971945469923_o.jpg" />
     <Content Include="Images\14310483_1275201602524268_4185070511122761223_o.jpg" />
     <Content Include="Images\14633491_256151144782763_3862838893876381398_o.jpg" />
+    <Content Include="Images\BeveledButton200.png" />
     <Content Include="Images\Ellwood2.jpg" />
     <Content Include="Images\Logo11.jpg" />
     <Content Include="Images\MandM_Logo.JPG" />
@@ -274,7 +275,6 @@
     <Content Include="Views\AlternateView\Bands.cshtml" />
     <Content Include="Views\AlternateView\Contact.cshtml" />
     <Content Include="Views\AlternateView\Event_Calendar.cshtml" />
-    <Content Include="Views\AlternateView\Feature.cshtml" />
     <Content Include="Views\AlternateView\Index.cshtml" />
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
@@ -298,6 +298,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Shared\_LayoutAlt.cshtml" />
+    <Content Include="Views\Shared\_LayoutMandMHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

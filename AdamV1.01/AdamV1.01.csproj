@@ -231,11 +231,11 @@
     <Content Include="Images\14067747_377606525696656_3871842971945469923_o.jpg" />
     <Content Include="Images\14310483_1275201602524268_4185070511122761223_o.jpg" />
     <Content Include="Images\14633491_256151144782763_3862838893876381398_o.jpg" />
-    <Content Include="Images\BeveledButton200.png" />
+    <Content Include="Images\BeveledButton100px.png" />
     <Content Include="Images\Ellwood2.jpg" />
+    <Content Include="Images\FlatterButton100px.png" />
     <Content Include="Images\Logo11.jpg" />
     <Content Include="Images\MandM_Logo.JPG" />
-    <Content Include="MandM_Logo.JPG" />
     <Content Include="obj\Debug\AdamV1.01.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\AdamV1.01.csprojResolveAssemblyReference.cache" />
     <Content Include="obj\Debug\AdamV1.01.dll" />
@@ -274,7 +274,6 @@
     <Content Include="Views\AlternateView\About.cshtml" />
     <Content Include="Views\AlternateView\Bands.cshtml" />
     <Content Include="Views\AlternateView\Contact.cshtml" />
-    <Content Include="Views\AlternateView\Event_Calendar.cshtml" />
     <Content Include="Views\AlternateView\Index.cshtml" />
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />

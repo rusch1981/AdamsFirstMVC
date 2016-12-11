@@ -34,7 +34,7 @@ C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamV1.01.Te
 C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamV1.01.Tests\bin\Release\System.Web.WebPages.xml
 C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamV1.01.Tests\bin\Release\System.Web.WebPages.Deployment.xml
 C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamV1.01.Tests\bin\Release\System.Web.WebPages.Razor.xml
+C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamV1.01.Tests\bin\Release\System.Web.Optimization.xml
 C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamV1.01.Tests\obj\Release\AdamV1.01.Tests.csprojResolveAssemblyReference.cache
 C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamV1.01.Tests\obj\Release\AdamV1.01.Tests.dll
 C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamV1.01.Tests\obj\Release\AdamV1.01.Tests.pdb
-C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamV1.01.Tests\bin\Release\System.Web.Optimization.xml

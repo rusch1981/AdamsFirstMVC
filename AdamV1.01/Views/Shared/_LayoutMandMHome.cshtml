@@ -21,7 +21,7 @@
             <div class="navbar-collapse collapse" id="center-align-nav-content">
                 <ul class="nav navbar-nav" id="center-helper">
                     @* SET navbar route, view name and layout name (in that order)  *@
-                    <li><a href="@Url.Action("About","AlternateView")" id="homepage-a-overrides" onmousedown="return mouseClicked()" onmouseup="return mouseUnclicked"><img name="aboutButton" src="../../images/BeveledButton100px.png" id="homepage-button-overrides" class="thumbnail img-responsive" alt="About Button"></a></li>
+                    <li><a href="@Url.Action("About","AlternateView")" id="homepage-a-overrides" onmousedown="return mouseClicked('aboutButton')" onmouseup="return mouseUnclicked('aboutButton')"><img name="aboutButton" src="../../images/BeveledButton100px.png" id="homepage-button-overrides" class="thumbnail img-responsive" alt="About Button"></a></li>
                     <li><a href="@Url.Action("Bands","AlternateView")" id="homepage-a-overrides"><img name="bandsButton" src="../../images/BeveledButton100px.png" id="homepage-button-overrides" class="thumbnail img-responsive" alt="Bands Button"></a></li>
                     <li><a href="@Url.Action("Contact","AlternateView")" id="homepage-a-overrides"><img name="contactButton" src="../../images/BeveledButton100px.png" id="homepage-button-overrides" class="thumbnail img-responsive" alt="Contact Button"></a></li>
                     </ul>
@@ -43,13 +43,26 @@
     @RenderSection("scripts", required: false)
 
     <script type="text/javascript">       
-        function mouseClicked() {            
-            document.images["aboutButton"].src= "../../images/FlatterButton100px.png";
-            return true;            
+        function mouseClicked(buttonName) {
+            switch (buttonName) {
+                case 'aboutButton': {
+                    document.images["aboutButton"].src = "../../images/FlatterButton100px.png";
+                    break;
+                }
+                default:
+                    break;
+            }
+                        
         }
-        function mouseUnclicked() {
-            document.images["aboutButton"].src= "../../images/BeveledButton100px.png";
-            return true;
+        function mouseUnclicked(buttonName) {
+            switch (buttonName) {
+                case 'aboutButton': {
+                    document.images["aboutButton"].src = "../../images/BeveledButton100px.png";
+                    break;
+                }
+                default:
+                    break;
+        }
         }
     </script>
 </body>

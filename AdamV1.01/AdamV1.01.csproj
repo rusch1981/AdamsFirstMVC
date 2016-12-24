@@ -175,6 +175,7 @@
     <Content Include="Images\BeveledButton100px.png" />
     <Content Include="Images\Ellwood2.jpg" />
     <Content Include="Images\Example1024px.png" />
+    <Content Include="Images\Example1024WithAreas.png" />
     <Content Include="Images\ExampleOne300px.png" />
     <Content Include="Images\ExampleTwo300px.png" />
     <Content Include="Images\FlatterButton100px.png" />

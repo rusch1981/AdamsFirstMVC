@@ -12,26 +12,31 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.CollageName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ImagePath)
+            @Html.DisplayNameFor(model => model.CollageSrc)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.CollageAlt)
+        </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.CollageName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ImagePath)
+            @Html.DisplayFor(modelItem => item.CollageSrc)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.DisplayFor(modelItem => item.CollageAlt)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CollageID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CollageID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CollageID })
         </td>
     </tr>
 }

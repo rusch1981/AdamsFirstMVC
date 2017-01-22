@@ -11,7 +11,11 @@ namespace AdamsFirstMVC.Models
         public int CollageID { get; set; }
         public int ClickableAreaID { get; set; }
         public string ClickableAreaName { get; set; }
-        public string Coordinates { get; set; }
-        public string URL { get; set; }
+        public string ClickableAreaCoordinates { get; set; }
+        public string ClickableAreaHref { get; set; }
+        public string ClickableAreaShape { get; set; }
+        public string ClickableAreaAlt { get; set; }
+
+        public virtual Collage Collage { get; set; }
     }
 }

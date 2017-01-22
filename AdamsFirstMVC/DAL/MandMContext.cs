@@ -17,6 +17,7 @@ namespace AdamsFirstMVC.DAL
 
         public DbSet<Collage> Collages { get; set; }
         public DbSet<ClickableArea>ClickableAreas { get; set; }
+        public DbSet<BandImage>BandImages { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

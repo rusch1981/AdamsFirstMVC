@@ -8,9 +8,11 @@ namespace AdamsFirstMVC.Models
 {
     public class Collage
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string ImagePath { get; set; }
+        public int CollageID { get; set; }
+        public string CollageName { get; set; }
+        public string CollageSrc { get; set; }
+        public string CollageAlt { get; set; }
+
         public virtual ICollection<ClickableArea> ClickableAreas { get; set; }
     }
 

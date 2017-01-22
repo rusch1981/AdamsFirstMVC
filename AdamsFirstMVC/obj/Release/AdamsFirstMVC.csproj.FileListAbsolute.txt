@@ -108,6 +108,5 @@ C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamsFirstMV
 C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamsFirstMVC\bin\System.Web.WebPages.Razor.xml
 C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamsFirstMVC\bin\Antlr3.Runtime.pdb
 C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamsFirstMVC\bin\Newtonsoft.Json.xml
-C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamsFirstMVC\obj\Release\AdamsFirstMVC.csprojResolveAssemblyReference.cache
 C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamsFirstMVC\obj\Release\AdamsFirstMVC.dll
 C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamsFirstMVC\obj\Release\AdamsFirstMVC.pdb

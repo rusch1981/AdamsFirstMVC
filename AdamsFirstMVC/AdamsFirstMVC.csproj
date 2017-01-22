@@ -158,7 +158,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AlternateViewController.cs" />
+    <Compile Include="Controllers\MandMController.cs" />
     <Compile Include="Controllers\CollageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\MandMContext.cs" />
@@ -199,6 +199,7 @@
     <Content Include="obj\Debug\AdamV1.01.dll" />
     <Content Include="obj\Debug\AdamV1.01.pdb" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="Scripts\areaMapResize.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -230,10 +231,10 @@
     <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\AlternateView\About.cshtml" />
-    <Content Include="Views\AlternateView\Bands.cshtml" />
-    <Content Include="Views\AlternateView\Contact.cshtml" />
-    <Content Include="Views\AlternateView\Index.cshtml" />
+    <Content Include="Views\MandM\About.cshtml" />
+    <Content Include="Views\MandM\Bands.cshtml" />
+    <Content Include="Views\MandM\Contact.cshtml" />
+    <Content Include="Views\MandM\Index.cshtml" />
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
@@ -255,7 +256,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
-    <Content Include="Views\Shared\_LayoutAlt.cshtml" />
     <Content Include="Views\Shared\_LayoutMandMHome.cshtml" />
     <Content Include="Views\Collage\Create.cshtml" />
     <Content Include="Views\Collage\Delete.cshtml" />

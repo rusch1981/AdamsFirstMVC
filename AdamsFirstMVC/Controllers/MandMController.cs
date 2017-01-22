@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace AdamsFirstMVC.Controllers
 {
-    public class AlternateViewController : Controller
+    public class MandMController : Controller
     {
         // GET: AlternateView
         public ActionResult Index()

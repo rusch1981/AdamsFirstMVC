@@ -16,7 +16,7 @@ namespace AdamsFirstMVC.DAL
             this.context = context;
         }
 
-        public IEnumerable<Collage> GetCollage()
+        public IEnumerable<Collage> GetCollages()
         {
             return context.Collages.ToList();
         }
@@ -42,7 +42,7 @@ namespace AdamsFirstMVC.DAL
             context.Entry(collage).State = EntityState.Modified;
         }
 
-        public IEnumerable<ClickableArea> GetClickableArea()
+        public IEnumerable<ClickableArea> GetClickableAreas()
         {
             return context.ClickableAreas.ToList();
         }
@@ -68,7 +68,7 @@ namespace AdamsFirstMVC.DAL
             context.Entry(clickableArea).State = EntityState.Modified;
         }
 
-        public IEnumerable<BandImage> GetBandImage()
+        public IEnumerable<BandImage> GetBandImages()
         {
             return context.BandImages.ToList();
         }
@@ -114,5 +114,6 @@ namespace AdamsFirstMVC.DAL
         {
             Dispose(true);
             GC.SuppressFinalize(this);
+        }
     }
 }

@@ -8,13 +8,18 @@ using System.Web.Mvc;
 namespace AdamsFirstMVC.Controllers
 {
     public class MandMController : Controller
-    {
+    {      
         private MandMContext db = new MandMContext();
+        private IMandMRepository mandMRepository;
+
+        public MandMController()
+        {
+            this.mandMRepository = new MandMRepository(new MandMContext());
+        }
 
         public ActionResult Index()
         {
-
-            return View(db);
+            return View();
         }
 
         public ActionResult Feature()
@@ -28,7 +33,8 @@ namespace AdamsFirstMVC.Controllers
         }
         public ActionResult Bands()
         {
-            return View();
+
+            return View(mandMRepository.GetBandImages());
         }
         public ActionResult Event_Calendar()
         {

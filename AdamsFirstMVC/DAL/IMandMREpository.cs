@@ -9,21 +9,21 @@ namespace AdamsFirstMVC.DAL
 {
     interface IMandMRepository : IDisposable
     {
-        IEnumerable<Collage> GetCollage();
+        IEnumerable<Collage> GetCollages();
         Collage GetCollageByName(string collageName);
         Collage GetCollageByID(int collageID);
         void InsertCollage(Collage collage);
         void DeleteCollage(int collageID);
         void UpdateCollage(Collage collage);
 
-        IEnumerable<ClickableArea> GetClickableArea();
+        IEnumerable<ClickableArea> GetClickableAreas();
         ClickableArea GetClickableAreaByName(string clickableAreaName);
         ClickableArea GetClickableAreaByID(int clickableAreaID);
         void InsertClickableArea(ClickableArea clickableArea);
         void DeleteClickableArea(int clickableAreaID);
         void UpdateClickableArea(ClickableArea clickableArea);
 
-        IEnumerable<BandImage> GetBandImage();
+        IEnumerable<BandImage> GetBandImages();
         BandImage GetBandImageByName(string bandImageName);
         BandImage GetBandImageByID(int bandImageID);
         void InsertBandImage(BandImage bandImage);

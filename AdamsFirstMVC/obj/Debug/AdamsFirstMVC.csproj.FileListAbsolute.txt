@@ -54,3 +54,4 @@ C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamsFirstMV
 C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamsFirstMVC\bin\Newtonsoft.Json.xml
 C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamsFirstMVC\obj\Debug\AdamsFirstMVC.dll
 C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamsFirstMVC\obj\Debug\AdamsFirstMVC.pdb
+C:\Users\arusch\Documents\Visual Studio 2015\Projects\AdamsFirstMVC\AdamsFirstMVC\obj\Debug\AdamsFirstMVC.csprojResolveAssemblyReference.cache

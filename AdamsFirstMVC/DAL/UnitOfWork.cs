@@ -9,18 +9,46 @@ namespace AdamsFirstMVC.DAL
     public class UnitOfWork : IDisposable
     {
         private MandMContext context = new MandMContext();
-        private GenericRepository<Course> courseRepository;
+        private GenericRepository<BandImage> bandImageRepository;
+        private GenericRepository<Collage> collageRepository;
+        private GenericRepository<ClickableArea> clickableAreaRepository;
 
-        public GenericRepository<Course> CourseRepository
+        public GenericRepository<BandImage> BandImageRepository
         {
             get
             {
 
-                if (this.courseRepository == null)
+                if (this.bandImageRepository == null)
                 {
-                    this.courseRepository = new GenericRepository<Course>(context);
+                    this.bandImageRepository = new GenericRepository<BandImage>(context);
                 }
-                return courseRepository;
+                return bandImageRepository;
+            }
+        }
+
+        public GenericRepository<Collage> CollageRepository
+        {
+            get
+            {
+
+                if (this.collageRepository == null)
+                {
+                    this.collageRepository = new GenericRepository<Collage>(context);
+                }
+                return collageRepository;
+            }
+        }
+
+        public GenericRepository<ClickableArea> ClickableAreaRepository
+        {
+            get
+            {
+
+                if (this.clickableAreaRepository == null)
+                {
+                    this.clickableAreaRepository = new GenericRepository<ClickableArea>(context);
+                }
+                return clickableAreaRepository;
             }
         }
 

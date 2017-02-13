@@ -161,17 +161,9 @@
     <Compile Include="Controllers\MandMController.cs" />
     <Compile Include="Controllers\CollageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAL\BandImageRepository.cs" />
-    <Compile Include="DAL\ClickableAreaRepository.cs" />
-    <Compile Include="DAL\CollageRepository.cs" />
     <Compile Include="DAL\GenericRepository.cs" />
-    <Compile Include="DAL\IBandImageRepository.cs" />
-    <Compile Include="DAL\IClickableAreaRepository.cs" />
-    <Compile Include="DAL\ICollageRepository.cs" />
-    <Compile Include="DAL\IMandMRepository.cs" />
     <Compile Include="DAL\MandMContext.cs" />
     <Compile Include="DAL\MandMInitializer.cs" />
-    <Compile Include="DAL\MandMRepository.cs" />
     <Compile Include="DAL\UnitOfWork.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

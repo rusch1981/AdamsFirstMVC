@@ -20,23 +20,28 @@ namespace AdamsFirstMVC.DAL
         {
             return context.BandImages.ToList();
         }
+
         public BandImage GetBandImageByName(string bandImageName)
         {
             return context.BandImages.Find(bandImageName);
         }
+
         public BandImage GetBandImageByID(int bandImageID)
         {
             return context.BandImages.Find(bandImageID);
         }
+
         public void InsertBandImage(BandImage bandImage)
         {
             context.BandImages.Add(bandImage);
         }
+
         public void DeleteBandImage(int bandImageID)
         {
             BandImage bandImage = context.BandImages.Find(bandImageID);
             context.BandImages.Remove(bandImage);
         }
+
         public void UpdateBandImage(BandImage bandImage)
         {
             context.Entry(bandImage).State = EntityState.Modified;
@@ -46,6 +51,7 @@ namespace AdamsFirstMVC.DAL
         {
             context.SaveChanges();
         }
+
         private bool disposed = false;
 
         protected virtual void Dispose(bool disposing)
@@ -59,6 +65,7 @@ namespace AdamsFirstMVC.DAL
             }
             this.disposed = true;
         }
+
         public void Dispose()
         {
             Dispose(true);

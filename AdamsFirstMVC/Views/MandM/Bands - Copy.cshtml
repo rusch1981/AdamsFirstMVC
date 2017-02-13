@@ -1,4 +1,4 @@
-﻿@model  AdamsFirstMVC.DAL.UnitOfWork
+﻿@model IEnumerable<AdamsFirstMVC.Models.BandImage>
 @{
     ViewBag.Title = "Bands";
     Layout = "~/Views/Shared/_LayoutMandMHome.cshtml";
@@ -14,7 +14,7 @@
 
 <div id="smaller-content-helper" class="Band-content-helper">
 
-    @foreach (var item in Model.BandImageRepository.GetAll())
+    @foreach (var item in Model)
     {
         <div class="row">
             <h2>@item.BandImageName</h2>
@@ -32,18 +32,12 @@
 <div id="larger-content-center-helper" class="Band-content-helper">
     <div class="row">
         <div class="col-lg-12 col-sm-12 col-xs-12">
-            @* BAD MONKEY *@
-            @{ var collage = Model.CollageRepository.GetByID(1);}
-            <img class="thumbnail img-responsive" src="@collage.CollageSrc" alt="@collage.CollageAlt" usemap="#collageMap">
+            <img src="../../images/Example1024WithAreas.png" class="thumbnail img-responsive" usemap="#collageMap">
             <map name="collageMap">
-                @foreach (var item in Model.ClickableAreaRepository.GetAll())
-                {
-                    //BAD MONKEY
-                    if (item.CollageID == 1)
-                    {
-                        <area class="area1" shape="@item.ClickableAreaShape" coords="@item.ClickableAreaCoordinates" href="@item.ClickableAreaHref" alt="@item.ClickableAreaAlt" />
-                    }
-                }
+                <area class="area1" shape="rect" coords="87,114,244,202" href="http://www.google.com" alt="Google" />
+                <area class="area1" shape="rect" coords="318,219,544,366" href="http://www.yahoo.com" alt="Yahoo" />
+                <area class="area1" shape="rect" coords="117,474,306,575" href="http://www.hotmail.com" alt="Hotmail" />
+                <area class="area1" shape="rect" coords="595,493,866,630" href="http://www.gmail.com" alt="gmail" />
             </map>
         </div>
     </div>

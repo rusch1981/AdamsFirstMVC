@@ -9,11 +9,19 @@ namespace AdamsFirstMVC.DAL
     public class UnitOfWork : IDisposable
     {
         private MandMContext context = new MandMContext();
-        private GenericRepository<BandImage> bandImageRepository;
-        private GenericRepository<Collage> collageRepository;
-        private GenericRepository<ClickableArea> clickableAreaRepository;
+        private IGenericRepository<BandImage> bandImageRepository;
+        private IGenericRepository<Collage> collageRepository;
+        private IGenericRepository<ClickableArea> clickableAreaRepository;
+        
 
-        public GenericRepository<BandImage> BandImageRepository
+        public UnitOfWork(IGenericRepository<BandImage> bandImageRepository = null, IGenericRepository<Collage> collageRepository = null, IGenericRepository<ClickableArea> clickableAreaRepository = null)
+        {
+            this.bandImageRepository = bandImageRepository;
+            this.collageRepository = collageRepository;
+            this.clickableAreaRepository = clickableAreaRepository;
+        }
+           
+        public IGenericRepository<BandImage> BandImageRepository
         {
             get
             {
@@ -26,7 +34,7 @@ namespace AdamsFirstMVC.DAL
             }
         }
 
-        public GenericRepository<Collage> CollageRepository
+        public IGenericRepository<Collage> CollageRepository
         {
             get
             {
@@ -39,7 +47,7 @@ namespace AdamsFirstMVC.DAL
             }
         }
 
-        public GenericRepository<ClickableArea> ClickableAreaRepository
+        public IGenericRepository<ClickableArea> ClickableAreaRepository
         {
             get
             {

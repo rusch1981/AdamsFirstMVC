@@ -12,13 +12,19 @@ namespace AdamsFirstMVC.DAL
         private IGenericRepository<BandImage> bandImageRepository;
         private IGenericRepository<Collage> collageRepository;
         private IGenericRepository<ClickableArea> clickableAreaRepository;
+        private IGenericRepository<Setup> SetupRepository;
+        private IGenericRepository<BandImageSetup> BandImageSetupRepository;
         
 
-        public BandsUnitOfWork(IGenericRepository<BandImage> bandImageRepository = null, IGenericRepository<Collage> collageRepository = null, IGenericRepository<ClickableArea> clickableAreaRepository = null)
+        public BandsUnitOfWork(IGenericRepository<BandImage> bandImageRepository = null,
+            IGenericRepository<Collage> collageRepository = null, IGenericRepository<ClickableArea> clickableAreaRepository = null,
+            IGenericRepository<Setup> SetupRepository = null, IGenericRepository<BandImageSetup> BandImageSetupRepository = null)
         {
             this.bandImageRepository = bandImageRepository;
             this.collageRepository = collageRepository;
             this.clickableAreaRepository = clickableAreaRepository;
+            this.SetupRepository = SetupRepository;
+            this.BandImageSetupRepository = BandImageSetupRepository;
         }
            
         public IGenericRepository<BandImage> BandImageRepository

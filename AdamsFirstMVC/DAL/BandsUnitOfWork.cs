@@ -12,19 +12,19 @@ namespace AdamsFirstMVC.DAL
         private IGenericRepository<BandImage> bandImageRepository;
         private IGenericRepository<Collage> collageRepository;
         private IGenericRepository<ClickableArea> clickableAreaRepository;
-        private IGenericRepository<Setup> SetupRepository;
-        private IGenericRepository<BandImageSetup> BandImageSetupRepository;
+        private IGenericRepository<Setup> setupRepository;
+        private IGenericRepository<BandImageSetup> bandImageSetupRepository;
         
 
         public BandsUnitOfWork(IGenericRepository<BandImage> bandImageRepository = null,
             IGenericRepository<Collage> collageRepository = null, IGenericRepository<ClickableArea> clickableAreaRepository = null,
-            IGenericRepository<Setup> SetupRepository = null, IGenericRepository<BandImageSetup> BandImageSetupRepository = null)
+            IGenericRepository<Setup> setupRepository = null, IGenericRepository<BandImageSetup> bandImageSetupRepository = null)
         {
             this.bandImageRepository = bandImageRepository;
             this.collageRepository = collageRepository;
             this.clickableAreaRepository = clickableAreaRepository;
-            this.SetupRepository = SetupRepository;
-            this.BandImageSetupRepository = BandImageSetupRepository;
+            this.setupRepository = setupRepository;
+            this.bandImageSetupRepository = bandImageSetupRepository;
         }
            
         public IGenericRepository<BandImage> BandImageRepository
@@ -63,6 +63,32 @@ namespace AdamsFirstMVC.DAL
                     this.clickableAreaRepository = new GenericRepository<ClickableArea>(context);
                 }
                 return clickableAreaRepository;
+            }
+        }
+
+        public IGenericRepository<Setup> SetupRepository
+        {
+            get
+            {
+
+                if (this.setupRepository == null)
+                {
+                    this.setupRepository = new GenericRepository<Setup>(context);
+                }
+                return setupRepository;
+            }
+        }
+
+        public IGenericRepository<BandImageSetup> BandImageSetupRepository
+        {
+            get
+            {
+
+                if (this.bandImageSetupRepository == null)
+                {
+                    this.bandImageSetupRepository = new GenericRepository<BandImageSetup>(context);
+                }
+                return bandImageSetupRepository;
             }
         }
 

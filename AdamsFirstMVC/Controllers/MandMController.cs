@@ -9,16 +9,13 @@ namespace AdamsFirstMVC.Controllers
 {
     public class MandMController : Controller
     {
-        private BandsUnitOfWork unitOfWork = null;
+        private BandsUnitOfWork bandsUnitOfWork;
+        private AboutUnitOfWork aboutUnitOfWork;
 
         public MandMController()
         {
-            unitOfWork = new BandsUnitOfWork();
-        }
-
-        public MandMController(BandsUnitOfWork _UnitOfWork)
-        {
-            this.unitOfWork = _UnitOfWork;
+            bandsUnitOfWork = new BandsUnitOfWork();
+            aboutUnitOfWork = new AboutUnitOfWork();
         }
 
         public ActionResult Index()
@@ -33,12 +30,12 @@ namespace AdamsFirstMVC.Controllers
 
         public ActionResult About()
         {
-            return View();
+            return View(aboutUnitOfWork);
         }
 
         public ActionResult Bands()
         {
-            return View(unitOfWork);
+            return View(bandsUnitOfWork);
         }
 
         public ActionResult Event_Calendar()

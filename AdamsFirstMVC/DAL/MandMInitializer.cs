@@ -12,7 +12,7 @@ namespace AdamsFirstMVC.DAL
         {
             var Setup = new List<Setup>
             {
-                new Setup {AboutMandMID=1, CollageID=1}
+                new Setup {AboutMandMID=1, CollageID=1, SetupName="Test"}
             };
             Setup.ForEach(s => context.Setup.Add(s));
             context.SaveChanges();

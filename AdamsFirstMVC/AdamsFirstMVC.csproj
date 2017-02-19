@@ -161,6 +161,7 @@
     <Compile Include="Controllers\MandMController.cs" />
     <Compile Include="Controllers\CollageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\AboutUnitOfWork.cs" />
     <Compile Include="DAL\IGenericRepository.cs" />
     <Compile Include="DAL\GenericRepository.cs" />
     <Compile Include="DAL\MandMContext.cs" />

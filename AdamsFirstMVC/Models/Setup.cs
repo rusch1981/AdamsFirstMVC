@@ -10,6 +10,7 @@ namespace AdamsFirstMVC.Models
         public int SetupID { get; set; }
         public int AboutMandMID { get; set; }
         public int CollageID { get; set; }
+        public string SetupName { get; set; }
         public virtual ICollection<BandImageSetup> BandImageSetups { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using AdamsFirstMVC.Models;
 
 namespace AdamsFirstMVC.DAL
 {
-    public class UnitOfWork : IDisposable
+    public class BandsUnitOfWork : IDisposable
     {
         private MandMContext context = new MandMContext();
         private IGenericRepository<BandImage> bandImageRepository;
@@ -14,7 +14,7 @@ namespace AdamsFirstMVC.DAL
         private IGenericRepository<ClickableArea> clickableAreaRepository;
         
 
-        public UnitOfWork(IGenericRepository<BandImage> bandImageRepository = null, IGenericRepository<Collage> collageRepository = null, IGenericRepository<ClickableArea> clickableAreaRepository = null)
+        public BandsUnitOfWork(IGenericRepository<BandImage> bandImageRepository = null, IGenericRepository<Collage> collageRepository = null, IGenericRepository<ClickableArea> clickableAreaRepository = null)
         {
             this.bandImageRepository = bandImageRepository;
             this.collageRepository = collageRepository;

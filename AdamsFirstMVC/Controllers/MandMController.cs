@@ -9,14 +9,14 @@ namespace AdamsFirstMVC.Controllers
 {
     public class MandMController : Controller
     {
-        private UnitOfWork unitOfWork = null;
+        private BandsUnitOfWork unitOfWork = null;
 
         public MandMController()
         {
-            unitOfWork = new UnitOfWork();
+            unitOfWork = new BandsUnitOfWork();
         }
 
-        public MandMController(UnitOfWork _UnitOfWork)
+        public MandMController(BandsUnitOfWork _UnitOfWork)
         {
             this.unitOfWork = _UnitOfWork;
         }

@@ -10,6 +10,37 @@ namespace AdamsFirstMVC.DAL
     {
         protected override void Seed(MandMContext context)
         {
+            var Setup = new List<Setup>
+            {
+                new Setup {AboutMandMID=1, CollageID=1}
+            };
+            Setup.ForEach(s => context.Setup.Add(s));
+            context.SaveChanges();
+
+            var BandImageSetup = new List<BandImageSetup>
+            {
+                new BandImageSetup {SetupID = 1, BandImageSetupID=1},
+                new BandImageSetup {SetupID = 1, BandImageSetupID=2},
+                new BandImageSetup {SetupID = 1, BandImageSetupID=3},
+                new BandImageSetup {SetupID = 1, BandImageSetupID=4},
+                new BandImageSetup {SetupID = 1, BandImageSetupID=5}
+            };
+            BandImageSetup.ForEach(s => context.BandImageSetup.Add(s));
+            context.SaveChanges();
+
+            var AboutMandM = new List<AboutMandM>
+            {
+                new AboutMandM {HeadingH1 ="", HeadingH2="M&M Productions is an event planning company that specializes in organizing charity events. "
+                + "M&M Productions also supports, promotes and believes in local music and local musicians. <br/> <br/>"
+                + "We serve as a part time booking agent for several popular and incredibly talented local artists. "
+                + "The money made goes directly into funding the cost of organizing the charity events we host. "
+                +" This is how we make a difference making music. < br /> < br />"
+                + "Our charity events always feature local musicians who generously donate their time and talent to help "
+                + "worthy causes.", HeadingH3="", Body=""}
+            };
+            AboutMandM.ForEach(s => context.AboutMandM.Add(s));
+            context.SaveChanges();
+
             var Collages = new List<Collage>
             {
                 new Collage {CollageName="Example1024WithAreas", CollageSrc="../../images/Example1024WithAreas.png", CollageAlt="Collage of Bands"}

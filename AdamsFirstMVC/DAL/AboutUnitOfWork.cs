@@ -9,14 +9,15 @@ namespace AdamsFirstMVC.DAL
     public class AboutUnitOfWork : IDisposable
     {
         private MandMContext context = new MandMContext();
-        private IGenericRepository<AboutMandM> aboutMandMRepository;
-        private IGenericRepository<Setup> setupRepository;        
+        private IGenericRepository<AboutMandM> _aboutMandMRepository;
+        private IGenericRepository<Setup> _setupRepository;
+        private IGenericRepository<AboutMandMSetup> _aboutMandMSetupRepository;
 
         public AboutUnitOfWork(IGenericRepository<AboutMandM> aboutMandMRepository = null,
             IGenericRepository<Setup> setupRepository = null)
         {
-            this.aboutMandMRepository = aboutMandMRepository;
-            this.setupRepository = setupRepository;
+            this._aboutMandMRepository = aboutMandMRepository;
+            this._setupRepository = setupRepository;
         }
            
         
@@ -24,12 +25,11 @@ namespace AdamsFirstMVC.DAL
         {
             get
             {
-
-                if (this.aboutMandMRepository == null)
+                if (this._aboutMandMRepository == null)
                 {
-                    this.aboutMandMRepository = new GenericRepository<AboutMandM>(context);
+                    this._aboutMandMRepository = new GenericRepository<AboutMandM>(context);
                 }
-                return AboutMandMRepository;
+                return _aboutMandMRepository;
             }
         }
 
@@ -38,11 +38,24 @@ namespace AdamsFirstMVC.DAL
             get
             {
 
-                if (this.setupRepository == null)
+                if (this._setupRepository == null)
                 {
-                    this.setupRepository = new GenericRepository<Setup>(context);
+                    this._setupRepository = new GenericRepository<Setup>(context);
                 }
-                return setupRepository;
+                return _setupRepository;
+            }
+        }
+
+        public IGenericRepository<AboutMandMSetup> AboutMandMSetupRepository
+        {
+            get
+            {
+
+                if (this._aboutMandMSetupRepository == null)
+                {
+                    this._aboutMandMSetupRepository = new GenericRepository<AboutMandMSetup>(context);
+                }
+                return _aboutMandMSetupRepository;
             }
         }
 
@@ -51,18 +64,18 @@ namespace AdamsFirstMVC.DAL
             context.SaveChanges();
         }
 
-        private bool disposed = false;
+        private bool _disposed = false;
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!this.disposed)
+            if (!this._disposed)
             {
                 if (disposing)
                 {
                     context.Dispose();
                 }
             }
-            this.disposed = true;
+            this._disposed = true;
         }
 
         public void Dispose()

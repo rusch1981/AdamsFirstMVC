@@ -10,31 +10,6 @@ namespace AdamsFirstMVC.DAL
     {
         protected override void Seed(MandMContext context)
         {
-            var setup = new List<Setup>
-            {
-                new Setup {IsCurrentSetUp = true, SetupDate = DateTime.Today, CollageId=1, SetupName="Test"}
-            };
-            setup.ForEach(s => context.Setups.Add(s));
-            context.SaveChanges();
-
-            var bandImageSetup = new List<BandImageSetup>
-            {
-                new BandImageSetup {SetupId = 1, BandImageId=1},
-                new BandImageSetup {SetupId = 1, BandImageId=2},
-                new BandImageSetup {SetupId = 1, BandImageId=3},
-                new BandImageSetup {SetupId = 1, BandImageId=4},
-                new BandImageSetup {SetupId = 1, BandImageId=5}
-            };
-            bandImageSetup.ForEach(s => context.BandImageSetups.Add(s));
-            context.SaveChanges();
-
-            var aboutMandMSetup = new List<AboutMandMSetup>
-            {
-                new AboutMandMSetup {SetupId = 1, AboutMandMId=1}
-            };
-            aboutMandMSetup.ForEach(s => context.AboutMandMSetups.Add(s));
-            context.SaveChanges();
-
             var aboutMandM = new List<AboutMandM>
             {
                 new AboutMandM {HeadingH1 ="", HeadingH2="M&M Productions is an event planning company that specializes in organizing charity events. "
@@ -74,6 +49,31 @@ namespace AdamsFirstMVC.DAL
                 new BandImage { BandImageName= "Standing Room Only", BandImageSrc= "../../images/12974355_693471794089697_7994384813023512175_n.jpg", BandImageAlt= "Standing Room Only", BandHref= "http://www.facebook.com"}
             };
             bandImage.ForEach(s => context.BandImages.Add(s));
+            context.SaveChanges();
+
+            var setup = new List<Setup>
+            {
+                new Setup {IsCurrentSetUp = true, SetupDate = DateTime.Today, CollageId=1, SetupName="Test"}
+            };
+            setup.ForEach(s => context.Setups.Add(s));
+            context.SaveChanges();
+
+            var bandImageSetup = new List<BandImageSetup>
+            {
+                new BandImageSetup {SetupId = 1, BandImageId=1},
+                new BandImageSetup {SetupId = 1, BandImageId=2},
+                new BandImageSetup {SetupId = 1, BandImageId=3},
+                new BandImageSetup {SetupId = 1, BandImageId=4},
+                new BandImageSetup {SetupId = 1, BandImageId=5}
+            };
+            bandImageSetup.ForEach(s => context.BandImageSetups.Add(s));
+            context.SaveChanges();
+
+            var aboutMandMSetup = new List<AboutMandMSetup>
+            {
+                new AboutMandMSetup {SetupId = 1, AboutMandMId=1}
+            };
+            aboutMandMSetup.ForEach(s => context.AboutMandMSetups.Add(s));
             context.SaveChanges();
         }
     }

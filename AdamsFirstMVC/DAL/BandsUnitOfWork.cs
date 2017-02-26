@@ -2,29 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using AdamsFirstMVC.Models;
 
 namespace AdamsFirstMVC.DAL
 {
     public class BandsUnitOfWork : IDisposable
     {
-        private MandMContext context = new MandMContext();
-        private IGenericRepository<BandImage> bandImageRepository;
-        private IGenericRepository<Collage> collageRepository;
-        private IGenericRepository<ClickableArea> clickableAreaRepository;
-        private IGenericRepository<Setup> setupRepository;
-        private IGenericRepository<BandImageSetup> bandImageSetupRepository;
+        private readonly MandMContext _context = new MandMContext();
+        private IGenericRepository<BandImage> _bandImageRepository;
+        private IGenericRepository<Collage> _collageRepository;
+        private IGenericRepository<ClickableArea> _clickableAreaRepository;
+        private IGenericRepository<Setup> _setupRepository;
+        private IGenericRepository<BandImageSetup> _bandImageSetupRepository;
         
 
         public BandsUnitOfWork(IGenericRepository<BandImage> bandImageRepository = null,
             IGenericRepository<Collage> collageRepository = null, IGenericRepository<ClickableArea> clickableAreaRepository = null,
             IGenericRepository<Setup> setupRepository = null, IGenericRepository<BandImageSetup> bandImageSetupRepository = null)
         {
-            this.bandImageRepository = bandImageRepository;
-            this.collageRepository = collageRepository;
-            this.clickableAreaRepository = clickableAreaRepository;
-            this.setupRepository = setupRepository;
-            this.bandImageSetupRepository = bandImageSetupRepository;
+            this._bandImageRepository = bandImageRepository;
+            this._collageRepository = collageRepository;
+            this._clickableAreaRepository = clickableAreaRepository;
+            this._setupRepository = setupRepository;
+            this._bandImageSetupRepository = bandImageSetupRepository;
         }
            
         public IGenericRepository<BandImage> BandImageRepository
@@ -32,11 +33,11 @@ namespace AdamsFirstMVC.DAL
             get
             {
 
-                if (this.bandImageRepository == null)
+                if (this._bandImageRepository == null)
                 {
-                    this.bandImageRepository = new GenericRepository<BandImage>(context);
+                    this._bandImageRepository = new GenericRepository<BandImage>(_context);
                 }
-                return bandImageRepository;
+                return _bandImageRepository;
             }
         }
 
@@ -45,11 +46,11 @@ namespace AdamsFirstMVC.DAL
             get
             {
 
-                if (this.collageRepository == null)
+                if (this._collageRepository == null)
                 {
-                    this.collageRepository = new GenericRepository<Collage>(context);
+                    this._collageRepository = new GenericRepository<Collage>(_context);
                 }
-                return collageRepository;
+                return _collageRepository;
             }
         }
 
@@ -58,11 +59,11 @@ namespace AdamsFirstMVC.DAL
             get
             {
 
-                if (this.clickableAreaRepository == null)
+                if (this._clickableAreaRepository == null)
                 {
-                    this.clickableAreaRepository = new GenericRepository<ClickableArea>(context);
+                    this._clickableAreaRepository = new GenericRepository<ClickableArea>(_context);
                 }
-                return clickableAreaRepository;
+                return _clickableAreaRepository;
             }
         }
 
@@ -71,11 +72,11 @@ namespace AdamsFirstMVC.DAL
             get
             {
 
-                if (this.setupRepository == null)
+                if (this._setupRepository == null)
                 {
-                    this.setupRepository = new GenericRepository<Setup>(context);
+                    this._setupRepository = new GenericRepository<Setup>(_context);
                 }
-                return setupRepository;
+                return _setupRepository;
             }
         }
 
@@ -84,31 +85,61 @@ namespace AdamsFirstMVC.DAL
             get
             {
 
-                if (this.bandImageSetupRepository == null)
+                if (this._bandImageSetupRepository == null)
                 {
-                    this.bandImageSetupRepository = new GenericRepository<BandImageSetup>(context);
+                    this._bandImageSetupRepository = new GenericRepository<BandImageSetup>(_context);
                 }
-                return bandImageSetupRepository;
+                return _bandImageSetupRepository;
             }
+        }
+        //remove
+        public List<BandImage> GetBandImagesfromSetup()
+        {
+            var setupId = GetMainSetup().SetupId;
+            var bandImageSetups = BandImageSetupRepository.Get(setup => setup.SetupId == setupId).ToList();
+            var bandImageIds = new List<int>();
+            foreach (var setup in bandImageSetups)
+                bandImageIds.Add(setup.BandImageId);
+            var actualBandImages = new List<BandImage>();
+            foreach (var Id in bandImageIds)
+                actualBandImages.Add(BandImageRepository.GetByID(Id));
+
+            return actualBandImages;
+        }
+
+        public Setup GetMainSetup()
+        {
+            return SetupRepository.Get(setup => setup.IsCurrentSetUp).ToList().First();
+        }
+
+        public Collage GetSetupCollage()
+        {
+            return CollageRepository.GetByID(GetMainSetup().CollageId);
+        }
+
+        public List<ClickableArea> GetSetupClickableAreas()
+        {
+            var collageId = GetSetupCollage().CollageId;
+            return ClickableAreaRepository.Get(clickableArea => clickableArea.CollageId == collageId).ToList();
         }
 
         public void Save()
         {
-            context.SaveChanges();
+            _context.SaveChanges();
         }
 
-        private bool disposed = false;
+        private bool _disposed = false;
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!this.disposed)
+            if (!this._disposed)
             {
                 if (disposing)
                 {
-                    context.Dispose();
+                    _context.Dispose();
                 }
             }
-            this.disposed = true;
+            this._disposed = true;
         }
 
         public void Dispose()
@@ -116,5 +147,6 @@ namespace AdamsFirstMVC.DAL
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+
     }
 }

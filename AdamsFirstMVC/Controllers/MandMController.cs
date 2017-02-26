@@ -9,8 +9,8 @@ namespace AdamsFirstMVC.Controllers
 {
     public class MandMController : Controller
     {
-        private BandsUnitOfWork bandsUnitOfWork;
-        private AboutUnitOfWork aboutUnitOfWork;
+        private readonly BandsUnitOfWork bandsUnitOfWork;
+        private readonly AboutUnitOfWork aboutUnitOfWork;
 
         public MandMController()
         {
@@ -23,11 +23,6 @@ namespace AdamsFirstMVC.Controllers
             return View();
         }
 
-        public ActionResult Feature()
-        {
-            return View();
-        }
-
         public ActionResult About()
         {
             return View(aboutUnitOfWork);
@@ -36,11 +31,6 @@ namespace AdamsFirstMVC.Controllers
         public ActionResult Bands()
         {
             return View(bandsUnitOfWork);
-        }
-
-        public ActionResult Event_Calendar()
-        {
-            return View();
         }
 
         public ActionResult Contact()

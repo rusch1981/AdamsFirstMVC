@@ -7,10 +7,12 @@ namespace AdamsFirstMVC.Models
 {
     public class Setup
     {
-        public int SetupID { get; set; }
-        public int AboutMandMID { get; set; }
-        public int CollageID { get; set; }
+        public int SetupId { get; set; }
+        public bool IsCurrentSetUp { get; set; }
+        public DateTime SetupDate { get; set; }
+        public int CollageId { get; set; }
         public string SetupName { get; set; }
         public virtual ICollection<BandImageSetup> BandImageSetups { get; set; }
+        public virtual  ICollection<AboutMandMSetup> AboutMandMSetups { get; set; }
     }
 }

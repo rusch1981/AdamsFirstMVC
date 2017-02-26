@@ -5,12 +5,12 @@ using System.Web;
 
 namespace AdamsFirstMVC.Models
 {
-    public class BandImageSetup
+    public class AboutMandMSetup
     {
-        public int BandImageSetupId { get; set; }
+        public int AboutMandMSetupId { get; set; }
         public int SetupId { get; set; }
-        public int BandImageId { get; set; }
+        public int AboutMandMId { get; set; }
         public virtual Setup Setup { get; set; }
-        public virtual BandImage BandImage { get; set; }
+        public virtual AboutMandM AboutMandM {get; set; }
     }
 }

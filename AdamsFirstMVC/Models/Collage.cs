@@ -4,7 +4,7 @@ namespace AdamsFirstMVC.Models
 {
     public class Collage
     {
-        public int CollageID { get; set; }
+        public int CollageId { get; set; }
         public string CollageName { get; set; }
         public string CollageSrc { get; set; }
         public string CollageAlt { get; set; }

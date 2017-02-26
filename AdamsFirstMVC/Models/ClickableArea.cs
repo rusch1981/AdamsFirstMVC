@@ -8,8 +8,8 @@ namespace AdamsFirstMVC.Models
 {
     public class ClickableArea
     {
-        public int CollageID { get; set; }
-        public int ClickableAreaID { get; set; }
+        public int CollageId { get; set; }
+        public int ClickableAreaId { get; set; }
         public string ClickableAreaName { get; set; }
         public string ClickableAreaCoordinates { get; set; }
         public string ClickableAreaHref { get; set; }

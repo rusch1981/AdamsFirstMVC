@@ -171,6 +171,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AboutMandM.cs" />
+    <Compile Include="Models\AboutMandMSetup.cs" />
     <Compile Include="Models\BandImageSetup.cs" />
     <Compile Include="Models\ClickableArea.cs" />
     <Compile Include="Models\BandImage.cs" />

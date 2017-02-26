@@ -1,13 +1,15 @@
-﻿namespace AdamsFirstMVC.Models
+﻿using System.Collections.Generic;
+
+namespace AdamsFirstMVC.Models
 {
     public class BandImage
     {
-        public int BandImageID { get; set; }
+        public int BandImageId { get; set; }
         public string BandImageName { get; set; }
         public string BandImageSrc { get; set; }
         public string BandImageAlt { get; set; }
         public string BandHref { get; set; }
-
+        public virtual ICollection<BandImageSetup> BandImageSetups { get; set; }
     }
 
 }

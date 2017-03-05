@@ -8,16 +8,22 @@ namespace AdamsFirstMVC.DAL
 {
     public class AboutUnitOfWork : IDisposable
     {
-        private MandMContext context = new MandMContext();
+        private readonly MandMContext _context = new MandMContext();
+
         private IGenericRepository<AboutMandM> _aboutMandMRepository;
+
         private IGenericRepository<Setup> _setupRepository;
+
         private IGenericRepository<AboutMandMSetup> _aboutMandMSetupRepository;
 
         public AboutUnitOfWork(IGenericRepository<AboutMandM> aboutMandMRepository = null,
-            IGenericRepository<Setup> setupRepository = null)
+            IGenericRepository<Setup> setupRepository = null, IGenericRepository<AboutMandMSetup> aboutMandMSetupRepository = null)
         {
             this._aboutMandMRepository = aboutMandMRepository;
+
             this._setupRepository = setupRepository;
+
+            this._aboutMandMSetupRepository = aboutMandMSetupRepository;
         }
            
         
@@ -27,7 +33,7 @@ namespace AdamsFirstMVC.DAL
             {
                 if (this._aboutMandMRepository == null)
                 {
-                    this._aboutMandMRepository = new GenericRepository<AboutMandM>(context);
+                    this._aboutMandMRepository = new GenericRepository<AboutMandM>(_context);
                 }
                 return _aboutMandMRepository;
             }
@@ -40,7 +46,7 @@ namespace AdamsFirstMVC.DAL
 
                 if (this._setupRepository == null)
                 {
-                    this._setupRepository = new GenericRepository<Setup>(context);
+                    this._setupRepository = new GenericRepository<Setup>(_context);
                 }
                 return _setupRepository;
             }
@@ -53,15 +59,31 @@ namespace AdamsFirstMVC.DAL
 
                 if (this._aboutMandMSetupRepository == null)
                 {
-                    this._aboutMandMSetupRepository = new GenericRepository<AboutMandMSetup>(context);
+                    this._aboutMandMSetupRepository = new GenericRepository<AboutMandMSetup>(_context);
                 }
                 return _aboutMandMSetupRepository;
             }
         }
 
+        public List<AboutMandM> GetAboutContentsfromSetup()
+        {
+            var setupId = GetMainSetup().SetupId;
+
+            var aboutContentSetups = AboutMandMSetupRepository.Get(setup => setup.SetupId == setupId).ToList();
+
+            var aboutContentIds = aboutContentSetups.Select(setup => setup.AboutMandMId).ToList();
+
+            return aboutContentIds.Select(id => AboutMandMRepository.GetByID(id)).ToList();
+        }
+
+        private Setup GetMainSetup()
+        {
+            return SetupRepository.Get(setup => setup.IsCurrentSetUp).ToList().First();
+        }
+
         public void Save()
         {
-            context.SaveChanges();
+            _context.SaveChanges();
         }
 
         private bool _disposed = false;
@@ -72,7 +94,7 @@ namespace AdamsFirstMVC.DAL
             {
                 if (disposing)
                 {
-                    context.Dispose();
+                    _context.Dispose();
                 }
             }
             this._disposed = true;

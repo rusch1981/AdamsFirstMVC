@@ -10,10 +10,15 @@ namespace AdamsFirstMVC.DAL
     public class BandsUnitOfWork : IDisposable
     {
         private readonly MandMContext _context = new MandMContext();
+
         private IGenericRepository<BandImage> _bandImageRepository;
+
         private IGenericRepository<Collage> _collageRepository;
+
         private IGenericRepository<ClickableArea> _clickableAreaRepository;
+
         private IGenericRepository<Setup> _setupRepository;
+
         private IGenericRepository<BandImageSetup> _bandImageSetupRepository;
         
 
@@ -22,9 +27,13 @@ namespace AdamsFirstMVC.DAL
             IGenericRepository<Setup> setupRepository = null, IGenericRepository<BandImageSetup> bandImageSetupRepository = null)
         {
             this._bandImageRepository = bandImageRepository;
+
             this._collageRepository = collageRepository;
+
             this._clickableAreaRepository = clickableAreaRepository;
+
             this._setupRepository = setupRepository;
+
             this._bandImageSetupRepository = bandImageSetupRepository;
         }
            
@@ -37,6 +46,7 @@ namespace AdamsFirstMVC.DAL
                 {
                     this._bandImageRepository = new GenericRepository<BandImage>(_context);
                 }
+
                 return _bandImageRepository;
             }
         }
@@ -50,6 +60,7 @@ namespace AdamsFirstMVC.DAL
                 {
                     this._collageRepository = new GenericRepository<Collage>(_context);
                 }
+
                 return _collageRepository;
             }
         }
@@ -63,6 +74,7 @@ namespace AdamsFirstMVC.DAL
                 {
                     this._clickableAreaRepository = new GenericRepository<ClickableArea>(_context);
                 }
+
                 return _clickableAreaRepository;
             }
         }
@@ -76,6 +88,7 @@ namespace AdamsFirstMVC.DAL
                 {
                     this._setupRepository = new GenericRepository<Setup>(_context);
                 }
+
                 return _setupRepository;
             }
         }
@@ -89,25 +102,23 @@ namespace AdamsFirstMVC.DAL
                 {
                     this._bandImageSetupRepository = new GenericRepository<BandImageSetup>(_context);
                 }
+
                 return _bandImageSetupRepository;
             }
         }
-        //remove
+
         public List<BandImage> GetBandImagesfromSetup()
         {
             var setupId = GetMainSetup().SetupId;
-            var bandImageSetups = BandImageSetupRepository.Get(setup => setup.SetupId == setupId).ToList();
-            var bandImageIds = new List<int>();
-            foreach (var setup in bandImageSetups)
-                bandImageIds.Add(setup.BandImageId);
-            var actualBandImages = new List<BandImage>();
-            foreach (var Id in bandImageIds)
-                actualBandImages.Add(BandImageRepository.GetByID(Id));
 
-            return actualBandImages;
+            var bandImageSetups = BandImageSetupRepository.Get(setup => setup.SetupId == setupId).ToList();
+
+            var bandImageIds = bandImageSetups.Select(setup => setup.BandImageId).ToList();
+
+            return bandImageIds.Select(id => BandImageRepository.GetByID(id)).ToList();
         }
 
-        public Setup GetMainSetup()
+        private Setup GetMainSetup()
         {
             return SetupRepository.Get(setup => setup.IsCurrentSetUp).ToList().First();
         }

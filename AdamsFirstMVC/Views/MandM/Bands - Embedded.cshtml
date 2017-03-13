@@ -1,0 +1,133 @@
+﻿@using AdamsFirstMVC.Models
+@using Newtonsoft.Json
+@model  AdamsFirstMVC.DAL.BandsUnitOfWork
+@{
+    ViewBag.Title = "Bands";
+    Layout = "~/Views/Shared/_LayoutMandMHome.cshtml";
+}
+<div class="jumbotron" id="inherit-background">
+    <h1>
+        Bands:
+    </h1>
+</div>
+
+<div id="smaller-content-helper" class="Band-content-helper">
+
+    @foreach (var item in Model.GetBandImagesfromSetup())
+    {
+        <div class="row">
+            <h2>@item.BandImageName</h2>
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                @* replace the # symbols below with a url to have them link to another page or site. *@
+                <a href="@item.BandHref">
+                    <img src="@item.BandImageSrc" alt="@item.BandImageAlt" class="thumbnail img-responsive">
+                </a>
+            </div>
+        </div>
+    }
+
+</div>
+<div id="larger-content-center-helper" class="Band-content-helper">
+    <div class="row">
+        <div class="col-lg-12 col-sm-12 col-xs-12">
+
+            @{var collage = Model.GetSetupCollage();}
+
+            @{List<string> coords = Model.GetSetupClickableAreas().Select(x => x.ClickableAreaCoordinates).ToList();}
+
+            <img id="Collage" class="thumbnail img-responsive" src="@collage.CollageSrc" alt="@collage.CollageAlt" usemap="#collageMap">
+            <map name="collageMap">
+
+                @foreach (var item in Model.GetSetupClickableAreas())
+                {
+                    <area class="areas" shape="@item.ClickableAreaShape" coords="@item.ClickableAreaCoordinates" href="@item.ClickableAreaHref" alt="@item.ClickableAreaAlt" />
+
+                }
+
+            </map>
+        </div>
+    </div>
+</div>
+<script>
+    var originalCoords = @Html.Raw(Json.Encode(Model.GetSetupClickableAreasCoords().ToArray()));
+
+
+    $(window).load(function () {
+        resizeAreaCoords("Collage", "areas", originalCoords, 1024, 768);
+    });
+
+    $(window).resize(function () {
+        resizeAreaCoords("Collage", "areas", originalCoords, 1024, 768);
+    });
+
+    var resizeAreaCoords = (function(){
+        var originalCoords, standardWidth, standardHeight;
+
+        var calculateResizedAreaCoords = function(imgWidth, imgHeight){
+            var newArrayOfAreaElements = [];
+            var i;
+            for(i = 0; i < originalCoords.length; i++){
+                var coordsString = originalCoords[i];
+                var coordArrayOfStrings = coordsString.split(",");
+                var coordArrayOfNumbers = convertArrayToNumberArray(coordArrayOfStrings);
+                var newCoordArrayOfNumbers = calculateAreaCoordinatesChanges(coordArrayOfNumbers, imgWidth, imgHeight);
+                var newCoordString = convertArrayToString(newCoordArrayOfNumbers);
+                newArrayOfAreaElements.push(newCoordString);
+            }
+            return newArrayOfAreaElements;
+        }
+
+        var convertArrayToNumberArray = function(arrayOfStrings){
+            var i;
+            var coordNumber;
+            var coordArrayOfNumbers = [];
+            for(i = 0; i < arrayOfStrings.length; i++){
+                coordNumber = Number(arrayOfStrings[i]);
+                coordArrayOfNumbers.push(coordNumber);
+            }
+            return coordArrayOfNumbers;
+        }
+
+        var calculateAreaCoordinatesChanges = function(coordArrayOfNumbers, imgWidth, imgHeight){
+            var x1, y1, x2, y2;
+            x1 = Math.floor(imgWidth * coordArrayOfNumbers[0] / standardWidth);
+            y1 = Math.floor(imgHeight * coordArrayOfNumbers[1] / standardHeight);
+            x2 = Math.floor(imgWidth * coordArrayOfNumbers[2] / standardWidth);
+            y2 = Math.floor(imgHeight * coordArrayOfNumbers[3] / standardHeight);
+
+            var newCoordArrayOfNumbers = [x1,y1,x2,y2];
+            return newCoordArrayOfNumbers;
+        }
+
+        var convertArrayToString = function(newCoordArrayOfNumbers){
+            var i;
+            var newCoordString = "";
+            for(i = 0; i < newCoordArrayOfNumbers.length; i++){
+                newCoordString += newCoordArrayOfNumbers[i].toString();
+                if(i < newCoordArrayOfNumbers.length - 1){
+                    newCoordString += ", ";
+                }
+            }
+            return newCoordString;
+        }
+
+        var setAreaCoords = function(arrayOfAreaElements, resizedAreaCoords){
+            var i;
+            for(i = 0;i < arrayOfAreaElements.length; i++){
+                arrayOfAreaElements[i].setAttribute("coords", resizedAreaCoords[i]);
+            }
+        }
+
+        return function(Id, areaClass, defaultCoords, originalWidth, originalHeight){
+            originalCoords = defaultCoords;
+            standardWidth = originalWidth;
+            standardHeight = originalHeight;
+            var imgElement = document.getElementById(Id);
+            var imgWidth = imgElement.clientWidth;
+            var imgHeight = imgElement.clientHeight;
+            var resizedAreaCoords = calculateResizedAreaCoords(imgWidth, imgHeight);
+            setAreaCoords(document.getElementsByClassName(areaClass), resizedAreaCoords);
+        };
+    })();
+</script>
+

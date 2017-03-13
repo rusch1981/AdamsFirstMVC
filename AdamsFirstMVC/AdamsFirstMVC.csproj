@@ -208,7 +208,7 @@
     <Content Include="obj\Debug\AdamV1.01.dll" />
     <Content Include="obj\Debug\AdamV1.01.pdb" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="Scripts\areaMapResize.js" />
+    <Content Include="Scripts\imgAreaResponsizer.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">

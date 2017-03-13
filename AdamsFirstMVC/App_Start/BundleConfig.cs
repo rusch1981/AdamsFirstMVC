@@ -10,7 +10,7 @@ namespace AdamsFirstMVC
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/areaMapResize.js"));
+                        "~/Scripts/imgAreaResponsizer.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));

@@ -134,6 +134,11 @@ namespace AdamsFirstMVC.DAL
             return ClickableAreaRepository.Get(clickableArea => clickableArea.CollageId == collageId).ToList();
         }
 
+        public List<string> GetSetupClickableAreasCoords()
+        {
+            return GetSetupClickableAreas().Select(clickableArea => clickableArea.ClickableAreaCoordinates).ToList();
+        }
+
         public void Save()
         {
             _context.SaveChanges();

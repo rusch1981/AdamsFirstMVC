@@ -35,6 +35,7 @@ namespace AdamsFirstMVC.DAL
                 {
                     this._aboutMandMRepository = new GenericRepository<AboutMandM>(_context);
                 }
+
                 return _aboutMandMRepository;
             }
         }
@@ -48,6 +49,7 @@ namespace AdamsFirstMVC.DAL
                 {
                     this._setupRepository = new GenericRepository<Setup>(_context);
                 }
+
                 return _setupRepository;
             }
         }
@@ -61,6 +63,7 @@ namespace AdamsFirstMVC.DAL
                 {
                     this._aboutMandMSetupRepository = new GenericRepository<AboutMandMSetup>(_context);
                 }
+
                 return _aboutMandMSetupRepository;
             }
         }

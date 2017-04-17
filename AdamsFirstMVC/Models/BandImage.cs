@@ -9,6 +9,7 @@ namespace AdamsFirstMVC.Models
         public string BandImageSrc { get; set; }
         public string BandImageAlt { get; set; }
         public string BandHref { get; set; }
+        public string BandToolTip { get; set; }
         public virtual ICollection<BandImageSetup> BandImageSetups { get; set; }
     }
 

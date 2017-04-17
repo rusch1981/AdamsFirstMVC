@@ -47,7 +47,8 @@
     background-color: #000000;
     background-position: center top;
     color:#FFFFFF;
-    background:linear-gradient()
+    padding-bottom: 200px;
+    padding-top: 0px;
 }
 
 #Black_background{

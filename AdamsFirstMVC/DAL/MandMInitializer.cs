@@ -27,7 +27,7 @@ namespace AdamsFirstMVC.DAL
 
             var collages = new List<Collage>
             {
-                new Collage {CollageName="Example1024WithAreas", CollageSrc="../../images/Example1024WithAreas.png", CollageAlt="Collage of Bands"}
+                new Collage {CollageName="largebanddisplayupdateApril2017", CollageSrc="../../images/largebanddisplayupdateApril2017.png", CollageAlt="Collage of Bands"}
             };
 
             collages.ForEach(s => context.Collages.Add(s));
@@ -36,10 +36,31 @@ namespace AdamsFirstMVC.DAL
 
             var clickableAreas = new List<ClickableArea>
             {
-                new ClickableArea {CollageId=1, ClickableAreaName="Google", ClickableAreaCoordinates="87,114,244,202", ClickableAreaHref="http://www.google.com",ClickableAreaShape="rect",ClickableAreaAlt="Google.com"},
-                new ClickableArea {CollageId=1, ClickableAreaName="Yahoo", ClickableAreaCoordinates="318,219,544,366", ClickableAreaHref="http://www.yahoo.com",ClickableAreaShape="rect",ClickableAreaAlt="Yahoo.com"},
-                new ClickableArea {CollageId=1, ClickableAreaName="Hotmail", ClickableAreaCoordinates="117,474,306,575", ClickableAreaHref="http://www.hotmail.com",ClickableAreaShape="rect",ClickableAreaAlt="Hotmail.com"},
-                new ClickableArea {CollageId=1, ClickableAreaName="gmail", ClickableAreaCoordinates="595,493,866,630", ClickableAreaHref="http://www.gmail.com",ClickableAreaShape="rect",ClickableAreaAlt="Gmail.com"}
+                new ClickableArea {CollageId=1, ClickableAreaName="Rebel Theory", ClickableAreaCoordinates="0,0,417,191", ClickableAreaHref="https://www.facebook.com/Rebel-Theory-621159421413161/",ClickableAreaShape="rect",ClickableAreaAlt="Rebel Theory",BandToolTip = "Rebel Theory"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Rebel Theory", ClickableAreaCoordinates="30,193,339,248", ClickableAreaHref="https://www.facebook.com/Rebel-Theory-621159421413161/",ClickableAreaShape="rect",ClickableAreaAlt="Rebel Theory",BandToolTip = "Rebel Theory"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Khaos Kings", ClickableAreaCoordinates="422,4,1063,115", ClickableAreaHref="https://www.facebook.com/KhaoskingsSC/?ref=br_rs",ClickableAreaShape="rect",ClickableAreaAlt="Khaos Kings",BandToolTip = "Khaos Kings"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Khaos Kings", ClickableAreaCoordinates="422,118,1063,197", ClickableAreaHref="https://www.facebook.com/KhaoskingsSC/?ref=br_rs",ClickableAreaShape="rect",ClickableAreaAlt="Khaos Kings",BandToolTip = "Khaos Kings"},
+                new ClickableArea {CollageId=1, ClickableAreaName="The Wingnuts", ClickableAreaCoordinates="1168,11,1583,210", ClickableAreaHref="https://www.facebook.com/The-Wingnuts-335327236591252/",ClickableAreaShape="rect",ClickableAreaAlt="The Wingnuts",BandToolTip = "The Wingnuts"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Acoustic Saints", ClickableAreaCoordinates="1590,1,1888,257", ClickableAreaHref="https://www.facebook.com/AcousticSaintsRock/?ref=br_rs",ClickableAreaShape="rect",ClickableAreaAlt="Acoustic Saints",BandToolTip = "Acoustic Saints"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Sticks and Stones", ClickableAreaCoordinates="9,269,339,565", ClickableAreaHref="https://www.facebook.com/SticksAndStonesNC/",ClickableAreaShape="rect",ClickableAreaAlt="Sticks and Stones",BandToolTip = "Sticks and Stones"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Rachel's Ransom", ClickableAreaCoordinates="354,200,830,406", ClickableAreaHref="https://www.facebook.com/rachelsransom/",ClickableAreaShape="rect",ClickableAreaAlt="Rachel's Ransom",BandToolTip = "Rachel's Ransom"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Game Face", ClickableAreaCoordinates="842,240,1322,499", ClickableAreaHref="https://www.facebook.com/gameface4u/0",ClickableAreaShape="rect",ClickableAreaAlt="Game Face",BandToolTip = "Game Face"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Shannon Lee", ClickableAreaCoordinates="1334,253,1581,567", ClickableAreaHref="http://www.simplyshannon.net/",ClickableAreaShape="rect",ClickableAreaAlt="Shannon Lee",BandToolTip = "Shannon Lee"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Shannon Lee", ClickableAreaCoordinates="1582,265,1666,463", ClickableAreaHref="http://www.simplyshannon.net/",ClickableAreaShape="rect",ClickableAreaAlt="Shannon Lee",BandToolTip = "Shannon Lee"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Brantley Rate", ClickableAreaCoordinates="69,610,255,865", ClickableAreaHref="https://www.facebook.com/brantleylanerate/",ClickableAreaShape="rect",ClickableAreaAlt="Brantley Rate",BandToolTip = "Brantley Rate"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Mitch Hayes", ClickableAreaCoordinates="363,494,647,692", ClickableAreaHref="http://www.mitchhayesmusic.com/",ClickableAreaShape="rect",ClickableAreaAlt="Mitch Hayes",BandToolTip = "Mitch Hayes"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Mitch Hayes", ClickableAreaCoordinates="649,496,753,614", ClickableAreaHref="http://www.mitchhayesmusic.com/",ClickableAreaShape="rect",ClickableAreaAlt="Mitch Hayes",BandToolTip = "Mitch Hayes"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Standing Room Only", ClickableAreaCoordinates="734,627,1192,768", ClickableAreaHref="https://www.facebook.com/SRO2015/",ClickableAreaShape="rect",ClickableAreaAlt="Standing Room Only",BandToolTip = "Standing Room Only"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Standing Room Only", ClickableAreaCoordinates="893,542,1183,623", ClickableAreaHref="https://www.facebook.com/SRO2015/",ClickableAreaShape="rect",ClickableAreaAlt="Standing Room Only",BandToolTip = "Standing Room Only"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Catawba River Monster", ClickableAreaCoordinates="1249,584,1605,800", ClickableAreaHref="http://www.catawbarivermonster.com/",ClickableAreaShape="rect",ClickableAreaAlt="Catawba River Monster",BandToolTip = "Catawba River Monster"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Carolina Rhythm Band", ClickableAreaCoordinates="1609,474,1889,757", ClickableAreaHref="https://www.carolinarhythmband.com/",ClickableAreaShape="rect",ClickableAreaAlt="Carolina Rhythm Band",BandToolTip = "Carolina Rhythm Band"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Ellwood City Band", ClickableAreaCoordinates="60,926,488,1078", ClickableAreaHref="https://www.facebook.com/Ellwood-City-Band-1019490414809599/",ClickableAreaShape="rect",ClickableAreaAlt="Ellwood City Band",BandToolTip = "Ellwood City Band"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Ellwood City Band", ClickableAreaCoordinates="276,847,499,922", ClickableAreaHref="https://www.facebook.com/Ellwood-City-Band-1019490414809599/",ClickableAreaShape="rect",ClickableAreaAlt="Ellwood City Band",BandToolTip = "Ellwood City Band"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Remedy Hollow", ClickableAreaCoordinates="552,787,727,1047", ClickableAreaHref="https://www.facebook.com/remedyhollow/",ClickableAreaShape="rect",ClickableAreaAlt="Remedy Hollow",BandToolTip = "Remedy Hollow"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Remedy Hollow", ClickableAreaCoordinates="734,843,982,1073", ClickableAreaHref="https://www.facebook.com/remedyhollow/",ClickableAreaShape="rect",ClickableAreaAlt="Remedy Hollow",BandToolTip = "Remedy Hollow"},
+                new ClickableArea {CollageId=1, ClickableAreaName="Jody and Joanna", ClickableAreaCoordinates="1102,816,1417,1073", ClickableAreaHref="https://www.facebook.com/jodyedwardsmusic1/",ClickableAreaShape="rect",ClickableAreaAlt="Jody and Joanna",BandToolTip = "Jody and Joanna"},
+                new ClickableArea {CollageId=1, ClickableAreaName="House of Payne", ClickableAreaCoordinates="1540,848,1888,1076", ClickableAreaHref="https://www.facebook.com/Unofficial-house-of-payne-band-1671711236449993/",ClickableAreaShape="rect",ClickableAreaAlt="House of Payne",BandToolTip = "House of Payne"},
+                new ClickableArea {CollageId=1, ClickableAreaName="House of Payne", ClickableAreaCoordinates="1619,785,1888,847", ClickableAreaHref="https://www.facebook.com/Unofficial-house-of-payne-band-1671711236449993/",ClickableAreaShape="rect",ClickableAreaAlt="House of Payne",BandToolTip = "House of Payne"},
             };
 
             clickableAreas.ForEach(s => context.ClickableAreas.Add(s));
@@ -48,11 +69,23 @@ namespace AdamsFirstMVC.DAL
 
             var bandImage = new List<BandImage>
             {
-                new BandImage { BandImageName= "Acoustic Saints", BandImageSrc= "../../images/13730988_211766675887877_986217828283931809_o.jpg", BandImageAlt= "Acoustic Saints", BandHref= "http://google.com"},
-                new BandImage { BandImageName= "Ellwood City Band", BandImageSrc= "../../images/Ellwood2.jpg", BandImageAlt= "Ellwood City Band", BandHref= "http://www.yahoo.com"},
-                new BandImage { BandImageName= "Game Face", BandImageSrc= "../../images/13668737_1230873603623735_8560807734309575763_o.jpg", BandImageAlt= "Game Face", BandHref= "http://www.hotmail.com"},
-                new BandImage { BandImageName= "Rachel's Ransom", BandImageSrc= "../../images/13083336_10207551416995773_4912061311993510710_n.jpg", BandImageAlt= "Rachel's Ransom", BandHref= "http://www.gmail.com"},
-                new BandImage { BandImageName= "Standing Room Only", BandImageSrc= "../../images/12974355_693471794089697_7994384813023512175_n.jpg", BandImageAlt= "Standing Room Only", BandHref= "http://www.facebook.com"}
+                new BandImage { BandImageName= "Acoustic Saints", BandImageSrc= "../../images/AcousticSaints.png", BandImageAlt= "Acoustic Saints", BandHref= "https://www.facebook.com/AcousticSaintsRock/?ref=br_rs", BandToolTip = "Acoustic Saints"},
+                new BandImage { BandImageName= "Brantley Rate", BandImageSrc= "../../images/BrantleyRate.jpg", BandImageAlt= "Brantley Rate", BandHref= "https://www.facebook.com/brantleylanerate/", BandToolTip = "Brantley Rate"},
+                new BandImage { BandImageName= "Carolina Rhythm Band", BandImageSrc= "../../images/CarolinaRhythmBand.png", BandImageAlt= "Carolina Rhythm Band", BandHref= "https://www.carolinarhythmband.com/", BandToolTip = "Carolina Rhythm Band"},
+                new BandImage { BandImageName= "Catawba River Monster", BandImageSrc= "../../images/CatawbaRiverMonster.png", BandImageAlt= "Catawba River Monster", BandHref= "http://www.catawbarivermonster.com/", BandToolTip = "Catawba River Monster"},
+                new BandImage { BandImageName= "Ellwood City Band", BandImageSrc= "../../images/Ellwood.jpg", BandImageAlt= "Ellwood City Band", BandHref= "https://www.facebook.com/Ellwood-City-Band-1019490414809599/", BandToolTip = "Ellwood City Band"},
+                new BandImage { BandImageName= "Game Face", BandImageSrc= "../../images/GameFace321.png", BandImageAlt= "Game Face", BandHref= "https://www.facebook.com/gameface4u/0", BandToolTip = "Game Face"},
+                new BandImage { BandImageName= "House of Payne", BandImageSrc= "../../images/HouseOfPayne.png", BandImageAlt= "House of Payne", BandHref= "https://www.facebook.com/Unofficial-house-of-payne-band-1671711236449993/", BandToolTip = "House of Payne"},
+                new BandImage { BandImageName= "Jody and Joanna", BandImageSrc= "../../images/JodyandJoanna.png", BandImageAlt= "Jody and Joanna", BandHref= "https://www.facebook.com/jodyedwardsmusic1/", BandToolTip = "Jody and Joanna"},
+                new BandImage { BandImageName= "Khaos Kings", BandImageSrc= "../../images/KhaosKings.png", BandImageAlt= "Khaos Kings", BandHref= "https://www.facebook.com/KhaoskingsSC/?ref=br_rs", BandToolTip = "Khaos Kings"},
+                new BandImage { BandImageName= "Mitch Hayes", BandImageSrc= "../../images/MitchHayes.png", BandImageAlt= "Mitch Hayes", BandHref= "http://www.mitchhayesmusic.com/", BandToolTip = "Mitch Hayes"},
+                new BandImage { BandImageName= "Rachel's Ransom", BandImageSrc= "../../images/RachelsRansom.png", BandImageAlt= "Rachel's Ransom", BandHref= "https://www.facebook.com/rachelsransom/", BandToolTip = "Rachel's Ransom"},
+                new BandImage { BandImageName= "Rebel Theory", BandImageSrc= "../../images/RebelTherory.png", BandImageAlt= "Rebel Theory", BandHref= "https://www.facebook.com/Rebel-Theory-621159421413161/", BandToolTip = "Rebel Theory"},
+                new BandImage { BandImageName= "Remedy Hollow", BandImageSrc= "../../images/RemedyHollow321.png", BandImageAlt= "Remedy Hollow", BandHref= "https://www.facebook.com/remedyhollow/", BandToolTip = "Remedy Hollow"},
+                new BandImage { BandImageName= "Shannon Lee", BandImageSrc= "../../images/ShannonLee.png", BandImageAlt= "Shannon Lee", BandHref= "http://www.simplyshannon.net/", BandToolTip = "Shannon Lee"},
+                new BandImage { BandImageName= "Standing Room Only", BandImageSrc= "../../images/StandingRoomOnly.png", BandImageAlt= "Standing Room Only", BandHref= "https://www.facebook.com/SRO2015/", BandToolTip = "Standing Room Only"},
+                new BandImage { BandImageName= "Sticks and Stones", BandImageSrc= "../../images/SticksStones.png", BandImageAlt= "Sticks and Stones", BandHref= "https://www.facebook.com/SticksAndStonesNC/", BandToolTip = "Sticks and Stones"},
+                new BandImage { BandImageName= "The Wingnuts", BandImageSrc= "../../images/Wingnuts.png", BandImageAlt= "The Wingnuts", BandHref= "https://www.facebook.com/The-Wingnuts-335327236591252/", BandToolTip = "The Wingnuts"},
             };
 
             bandImage.ForEach(s => context.BandImages.Add(s));
@@ -74,7 +107,19 @@ namespace AdamsFirstMVC.DAL
                 new BandImageSetup {SetupId = 1, BandImageId=2},
                 new BandImageSetup {SetupId = 1, BandImageId=3},
                 new BandImageSetup {SetupId = 1, BandImageId=4},
-                new BandImageSetup {SetupId = 1, BandImageId=5}
+                new BandImageSetup {SetupId = 1, BandImageId=5},
+                new BandImageSetup {SetupId = 1, BandImageId=6},
+                new BandImageSetup {SetupId = 1, BandImageId=7},
+                new BandImageSetup {SetupId = 1, BandImageId=8},
+                new BandImageSetup {SetupId = 1, BandImageId=9},
+                new BandImageSetup {SetupId = 1, BandImageId=10},
+                new BandImageSetup {SetupId = 1, BandImageId=11},
+                new BandImageSetup {SetupId = 1, BandImageId=12},
+                new BandImageSetup {SetupId = 1, BandImageId=13},
+                new BandImageSetup {SetupId = 1, BandImageId=14},
+                new BandImageSetup {SetupId = 1, BandImageId=15},
+                new BandImageSetup {SetupId = 1, BandImageId=16},
+                new BandImageSetup {SetupId = 1, BandImageId=17}
             };
 
             bandImageSetup.ForEach(s => context.BandImageSetups.Add(s));

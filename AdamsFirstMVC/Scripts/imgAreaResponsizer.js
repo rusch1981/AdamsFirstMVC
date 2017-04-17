@@ -1,68 +1,124 @@
-﻿var resizeAreaCoords = (function () {
-    var originalCoords, standardWidth, standardHeight;
+﻿var realResize;
 
-    var calculateResizedAreaCoords = function (imgWidth, imgHeight) {
-        var newArrayOfAreaElements = [];
-        var i;
-        for (i = 0; i < originalCoords.length; i++) {
-            var coordsString = originalCoords[i];
-            var coordArrayOfStrings = coordsString.split(",");
-            var coordArrayOfNumbers = convertArrayToNumberArray(coordArrayOfStrings);
-            var newCoordArrayOfNumbers = calculateAreaCoordinatesChanges(coordArrayOfNumbers, imgWidth, imgHeight);
-            var newCoordString = convertArrayToString(newCoordArrayOfNumbers);
-            newArrayOfAreaElements.push(newCoordString);
-        }
-        return newArrayOfAreaElements;
-    }
+setTimeout(function () {
+    realResize = true;
+}, 500);
 
-    var convertArrayToNumberArray = function (arrayOfStrings) {
-        var i;
-        var coordNumber;
-        var coordArrayOfNumbers = [];
-        for (i = 0; i < arrayOfStrings.length; i++) {
-            coordNumber = Number(arrayOfStrings[i]);
-            coordArrayOfNumbers.push(coordNumber);
-        }
-        return coordArrayOfNumbers;
-    }
+var imgAreaResponsizer = (function () {
+    var imgElements = document.getElementsByTagName("img");
+    var index = 0;
+    var naturalWidth = [];
+    var naturalHeight = [];
+    var areaClassNames = [];
+    var areaNodeLengths = [];
+    var loadTimeCoords = [];
 
-    var calculateAreaCoordinatesChanges = function (coordArrayOfNumbers, imgWidth, imgHeight) {
-        var x1 = Math.floor(imgWidth * coordArrayOfNumbers[0] / standardWidth);
-        var y1 = Math.floor(imgHeight * coordArrayOfNumbers[1] / standardHeight);
-        var x2 = Math.floor(imgWidth * coordArrayOfNumbers[2] / standardWidth);
-        var y2 = Math.floor(imgHeight * coordArrayOfNumbers[3] / standardHeight);
+    var responsizerSetupComplete = function () {
+        return imgElements.length == index;
+    };
 
-        var newCoordArrayOfNumbers = [x1, y1, x2, y2];
-        return newCoordArrayOfNumbers;
-    }
+    var updateAreaCoords = function () {
+        for (index = 0; index < imgElements.length; index++) {
+            var mapName = imgElements[index].getAttribute("usemap");
 
-    var convertArrayToString = function (newCoordArrayOfNumbers) {
-        var i;
-        var newCoordString = "";
-        for (i = 0; i < newCoordArrayOfNumbers.length; i++) {
-            newCoordString += newCoordArrayOfNumbers[i].toString();
-            if (i < newCoordArrayOfNumbers.length - 1) {
-                newCoordString += ", ";
+            if (mapName) {
+                var resizedCoords = calculateResizedAreaCoords(imgElements[index].clientWidth, imgElements[index].clientHeight);
+                setAreaCoords(document.getElementsByClassName(areaClassNames[index]), resizedCoords);
             }
         }
-        return newCoordString;
-    }
-
-    var setAreaCoords = function (arrayOfAreaElements, resizedAreaCoords) {
-        var i;
-        for (i = 0; i < arrayOfAreaElements.length; i++) {
-            arrayOfAreaElements[i].setAttribute("coords", resizedAreaCoords[i]);
-        }
-    }
-
-    return function (id, areaClass, defaultCoords, originalWidth, originalHeight) {
-        originalCoords = defaultCoords;
-        standardWidth = originalWidth;
-        standardHeight = originalHeight;
-        var imgElement = document.getElementById(id);
-        var imgWidth = imgElement.clientWidth;
-        var imgHeight = imgElement.clientHeight;
-        var resizedAreaCoords = calculateResizedAreaCoords(imgWidth, imgHeight);
-        setAreaCoords(document.getElementsByClassName(areaClass), resizedAreaCoords);
     };
-})()
+
+    var initialSetupAndUpdateOfAreaCoords = function () {
+        for (index = 0; index < imgElements.length; index++) {
+            var mapName = imgElements[index].getAttribute("usemap");
+
+            if (mapName) {
+                initializeImageSizes();
+                initializeAreaNodes(mapName);
+                var resizedCoords = calculateResizedAreaCoords(imgElements[index].clientWidth, imgElements[index].clientHeight);
+                setAreaCoords(document.getElementsByClassName(areaClassNames[index]), resizedCoords);
+            }
+            else {
+                naturalWidth.push(null);
+                naturalHeight.push(null);
+                areaClassNames.push(null);
+                areaNodeLengths.push(0);
+            }
+        }
+    };
+
+    var initializeImageSizes = function () {
+        naturalWidth.push(imgElements[index].naturalWidth);
+        naturalHeight.push(imgElements[index].naturalHeight);
+    };
+
+    var initializeAreaNodes = function (mapName) {
+        var nodes = document.getElementsByName(mapName.replace("#", ""))[0].children;
+        areaClassNames.push(nodes[0].className);
+        areaNodeLengths.push(nodes.length);
+        for (var i = 0; i < nodes.length; i++) {
+            loadTimeCoords.push(nodes[i].getAttribute("coords"));
+        }
+    };
+
+    var calculateResizedAreaCoords = function (imgWidth, imgHeight) {
+        var resizedAreaCoords = [];
+        var beginningIndex = getbeginningIndex();
+
+        for (var i = beginningIndex; i < beginningIndex + areaNodeLengths[index]; i++) {
+            var coordNumbers = convertStringsToNumbers(loadTimeCoords[i].split(","));
+            var resizedCoordNumbers = calculateAreaCoordinateChanges(coordNumbers, imgWidth, imgHeight);
+            resizedAreaCoords.push(resizedCoordNumbers.join());
+        }
+        return resizedAreaCoords;
+    };
+
+    var getbeginningIndex = function () {
+        var beginningIndex = 0;
+        if (index === 0) {
+            return beginningIndex;
+        }
+        else {
+            for (var i = 0; i < index; i++) {
+                beginningIndex += areaNodeLengths[i];
+            }
+            return beginningIndex;
+        }
+    };
+
+    var convertStringsToNumbers = function (strings) {
+        var numbers = [];
+        strings.forEach(function (element) {
+            numbers.push(Number(element));
+        });
+        return numbers;
+    };
+
+    var calculateAreaCoordinateChanges = function (Coordinates, imgWidth, imgHeight) {
+        var changes = [];
+        for (var i = 0; i < Coordinates.length; i++) {
+            if (i % 2 === 0) {
+                changes.push(Math.floor(imgHeight * Coordinates[i] / naturalHeight[index]));
+            }
+            else {
+                changes.push(Math.floor(imgWidth * Coordinates[i] / naturalWidth[index]));
+            }
+        }
+        return changes;
+    };
+
+    var setAreaCoords = function (AreaElements, AreaCoords) {
+        for (var i = 0; i < AreaElements.length; i++) {
+            AreaElements[i].setAttribute("coords", AreaCoords[i]);
+        }
+    };
+
+    return function () {
+        if (responsizerSetupComplete()) {
+            updateAreaCoords();
+        }
+        else {
+            initialSetupAndUpdateOfAreaCoords();
+        }
+    };
+})();

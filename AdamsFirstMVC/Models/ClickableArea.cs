@@ -15,6 +15,7 @@ namespace AdamsFirstMVC.Models
         public string ClickableAreaHref { get; set; }
         public string ClickableAreaShape { get; set; }
         public string ClickableAreaAlt { get; set; }
+        public string BandToolTip { get; set; }
 
         public virtual Collage Collage { get; set; }
     }

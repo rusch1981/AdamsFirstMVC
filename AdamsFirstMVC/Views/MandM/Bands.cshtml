@@ -5,11 +5,23 @@
     ViewBag.Title = "Bands";
     Layout = "~/Views/Shared/_LayoutMandMHome.cshtml";
 }
-<div class="jumbotron" id="inherit-background">
+@section scripts{
+    <script>
+        window.onload = function () { imgAreaResponsizer(); };
+        window.onresize = function () {
+            //IE11 on 8.1 work around.  ugh.
+            if (realResize) {
+                imgAreaResponsizer();
+            }
+        };
+    </script>
+}
+
+@*<div class="jumbotron" id="inherit-background">
     <h1>
         Bands:
     </h1>
-</div>
+</div>*@
 
 <div id="smaller-content-helper" class="Band-content-helper">
 
@@ -20,7 +32,7 @@
             <div class="col-lg-12 col-sm-12 col-xs-12">
                 @* replace the # symbols below with a url to have them link to another page or site. *@
                 <a href="@item.BandHref">
-                    <img src="@item.BandImageSrc" alt="@item.BandImageAlt" class="thumbnail img-responsive">
+                    <img src="@item.BandImageSrc" alt="@item.BandImageAlt" class="thumbnail img-responsive" title="@item.BandToolTip">
                 </a>
             </div>
         </div>
@@ -35,12 +47,12 @@
 
             @{List<string> coords = Model.GetSetupClickableAreas().Select(x => x.ClickableAreaCoordinates).ToList();}
 
-            <img id="Collage" class="thumbnail img-responsive" src="@collage.CollageSrc" alt="@collage.CollageAlt" usemap="#collageMap">
+            <img id="Collage" class="thumbnail img-responsive" src="@collage.CollageSrc" alt="@collage.CollageAlt"  usemap="#collageMap">
             <map name="collageMap">
 
                 @foreach (var item in Model.GetSetupClickableAreas())
                 {
-                    <area class="areas" shape="@item.ClickableAreaShape" coords="@item.ClickableAreaCoordinates" href="@item.ClickableAreaHref" alt="@item.ClickableAreaAlt" />
+                    <area class="areas" shape="@item.ClickableAreaShape" coords="@item.ClickableAreaCoordinates" href="@item.ClickableAreaHref" alt="@item.ClickableAreaAlt" title="@item.BandToolTip" />
 
                 }
 
@@ -48,18 +60,3 @@
         </div>
     </div>
 </div>
-<script>
-    var originalCoords = @Html.Raw(Json.Encode(Model.GetSetupClickableAreasCoords().ToArray()));
-
-
-    $(window).load(function () {
-        resizeAreaCoords("Collage", "areas", originalCoords, 1024, 768);
-    });
-
-    $(window).resize(function () {
-        resizeAreaCoords("Collage", "areas", originalCoords, 1024, 768);
-    });
-
-   
-</script>
-

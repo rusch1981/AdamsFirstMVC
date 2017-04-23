@@ -111,3 +111,4 @@ C:\Users\arusch\Documents\AdamsProjects\AdamsFirstMVC\AdamsFirstMVC\bin\Antlr3.R
 C:\Users\arusch\Documents\AdamsProjects\AdamsFirstMVC\AdamsFirstMVC\bin\Newtonsoft.Json.xml
 C:\Users\arusch\Documents\AdamsProjects\AdamsFirstMVC\AdamsFirstMVC\obj\Debug\AdamsFirstMVC.dll
 C:\Users\arusch\Documents\AdamsProjects\AdamsFirstMVC\AdamsFirstMVC\obj\Debug\AdamsFirstMVC.pdb
+C:\Users\arusch\Documents\AdamsProjects\AdamsFirstMVC\AdamsFirstMVC\obj\Debug\AdamsFirstMVC.csprojResolveAssemblyReference.cache

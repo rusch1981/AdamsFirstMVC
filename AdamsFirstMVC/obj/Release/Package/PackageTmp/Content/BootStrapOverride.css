@@ -1,0 +1,88 @@
+﻿/*PUT CSS OVERIDES BELOW*/
+
+#homepage-navbar-overrides{
+    background-color: #000000;
+    border-color: #808080;
+    border-style:ridge;
+    min-height:25px;
+    border-width: 3px 0 0;
+    width:100%;
+    
+}
+
+#homepage-button-overrides{
+    border:none;
+    border-radius:unset;
+    background-color:inherit;  
+}
+
+#homepage-a-overrides{
+    padding: 0px;
+    margin-left:50px;
+    margin-right:50px;
+
+
+}
+
+/* place the ID at the following level to maintain button center alighnment ->.navbar .navbar-collapse*/ 
+#center-align-nav-content {
+    text-align: center;
+}
+
+/*place this ID at the following level to maintain button center alighnment ->.navbar .navbar-nav*/ 
+#larger-content-center-helper {
+    display: inline-block;
+    float: none;
+}
+#smaller-content-helper{
+
+}
+.Band-content-helper{
+
+}
+
+#BSO_background{
+    background: url("../Images/MandM_Logo.JPG")no-repeat left center fixed;
+    background-size: 100% auto;
+    background-color: #000000;
+    background-position: center top;
+    color:#FFFFFF;
+    padding-bottom: 200px;
+    padding-top: 0px;
+}
+
+#Black_background{
+    background-size: 100% auto;
+     background-color: #000000;
+     color:#FFFFFF;
+ }
+
+#navbar-inverse{
+    background-color: #000000;
+    border-color: #FFFFFF;
+    color:#FFFFFF;
+    
+}
+/*#top-padding {
+    padding-top: 150px;
+}
+#bottom-margin {
+    margin-bottom: 0px;
+    padding-bottom:0px;
+}*/
+#inherit-background{
+    background-color: inherit;
+}
+@media all and (max-width:767px){
+    #larger-content-center-helper.nav.navbar-nav{display:none;}
+}
+@media all and (min-width:767px){
+    #smaller-content-helper.nav.navbar-nav{display:none;}
+}
+@media all and (max-width:767px){
+    #larger-content-center-helper.Band-content-helper{display:none;}
+}
+@media all and (min-width:767px){
+    #smaller-content-helper.Band-content-helper{display:none;}
+}
+

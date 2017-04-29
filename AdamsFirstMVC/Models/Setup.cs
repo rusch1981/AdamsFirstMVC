@@ -14,5 +14,6 @@ namespace AdamsFirstMVC.Models
         public string SetupName { get; set; }
         public virtual ICollection<BandImageSetup> BandImageSetups { get; set; }
         public virtual  ICollection<AboutMandMSetup> AboutMandMSetups { get; set; }
+        public virtual Collage Collage { get; set; }
     }
 }

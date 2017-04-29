@@ -170,15 +170,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704240330327_InitialCreate.cs" />
-    <Compile Include="Migrations\201704240330327_InitialCreate.Designer.cs">
-      <DependentUpon>201704240330327_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704240342016_InitialCreate1.cs" />
-    <Compile Include="Migrations\201704240342016_InitialCreate1.Designer.cs">
-      <DependentUpon>201704240342016_InitialCreate1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutMandM.cs" />
     <Compile Include="Models\AboutMandMSetup.cs" />
     <Compile Include="Models\BandImageSetup.cs" />
@@ -308,14 +299,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704240330327_InitialCreate.resx">
-      <DependentUpon>201704240330327_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704240342016_InitialCreate1.resx">
-      <DependentUpon>201704240342016_InitialCreate1.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,6 +1,4 @@
-﻿/*PUT CSS OVERIDES BELOW*/
-
-#homepage-navbar-overrides{
+﻿#homepage-navbar-overrides{
     background-color: #000000;
     border-color: #808080;
     border-style:ridge;
@@ -31,14 +29,12 @@
 
 /*place this ID at the following level to maintain button center alighnment ->.navbar .navbar-nav*/ 
 #larger-content-center-helper {
-    display: inline-block;
     float: none;
 }
-#smaller-content-helper{
 
-}
-.Band-content-helper{
-
+#larger-button-center-helper {
+    display: inline-block;
+    float: none;
 }
 
 #BSO_background{

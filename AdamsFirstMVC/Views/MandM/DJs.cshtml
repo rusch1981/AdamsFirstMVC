@@ -1,0 +1,24 @@
+﻿@using AdamsFirstMVC.Models
+@using Newtonsoft.Json
+@model AdamsFirstMVC.DAL.DJUnitOfWork
+@{
+    ViewBag.Title = "DJs";
+    Layout = "~/Views/Shared/_LayoutMandMHome.cshtml";
+}
+
+<div>
+
+    @foreach (var item in Model.GetDJImagesfromSetup())
+    {
+        <div class="row col-lg-">
+            <h2>@item.DJImageName</h2>
+            <div >
+                <a href="@item.DJHref">
+                    <img src="@item.DJImageSrc" alt="@item.DJImageAlt" class="thumbnail img-responsive" title="@item.DJToolTip">
+                </a>
+            </div>
+        </div>
+    }
+
+</div>
+

@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="AdamsFirstMVC" tags="IisApp">
+  <parameter name="IIS Web Application Name" description="" value="AdamsProject" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\arusch\\Documents\\AdamsProjects\\AdamsFirstMVC\\AdamsFirstMVC\\obj\\Release\\Package\\PackageTmp$" />
     <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\arusch\\Documents\\AdamsProjects\\AdamsFirstMVC\\AdamsFirstMVC\\obj\\Release\\Package\\PackageTmp$" />
   </parameter>
-  <parameter name="MandMContext-Web.config Connection String" description="" value="Data Source=tcp:mandmserve1.database.windows.net,1433;Initial Catalog=MandMContext;User ID=mandmadmin@mandmserve1;Password=Enterprize1" tags="">
+  <parameter name="MandMContext-Web.config Connection String" description="" value="Data Source=mandmserve1.database.windows.net;Initial Catalog=MandMWebDB1;Persist Security Info=True;User ID=mandmadmin;Password=Enterprize1" tags="">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\arusch\\Documents\\AdamsProjects\\AdamsFirstMVC\\AdamsFirstMVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MandMContext']/@connectionString" />
   </parameter>
 </parameters>

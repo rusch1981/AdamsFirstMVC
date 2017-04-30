@@ -9,13 +9,15 @@ namespace AdamsFirstMVC.Controllers
 {
     public class MandMController : Controller
     {
-        private readonly BandsUnitOfWork bandsUnitOfWork;
-        private readonly AboutUnitOfWork aboutUnitOfWork;
+        private readonly BandsUnitOfWork _bandsUnitOfWork;
+        private readonly AboutUnitOfWork _aboutUnitOfWork;
+        private readonly DJUnitOfWork _dJUnitOfWork;
 
         public MandMController()
         {
-            bandsUnitOfWork = new BandsUnitOfWork();
-            aboutUnitOfWork = new AboutUnitOfWork();
+            _bandsUnitOfWork = new BandsUnitOfWork();
+            _aboutUnitOfWork = new AboutUnitOfWork();
+            _dJUnitOfWork = new DJUnitOfWork();
         }
 
         public ActionResult Index()
@@ -25,12 +27,16 @@ namespace AdamsFirstMVC.Controllers
 
         public ActionResult About()
         {
-            return View(aboutUnitOfWork);
+            return View(_aboutUnitOfWork);
         }
 
         public ActionResult Bands()
         {
-            return View(bandsUnitOfWork);
+            return View(_bandsUnitOfWork);
+        }
+        public ActionResult DJs()
+        {
+            return View(_dJUnitOfWork);
         }
 
         public ActionResult Contact()

@@ -194,13 +194,13 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\AcousticSaints.png" />
-    <Content Include="Images\BeveledButton100px.png" />
     <Content Include="Images\BrantleyRate.jpg" />
     <Content Include="Images\CarolinaRhythmBand.png" />
     <Content Include="Images\CatawbaRiverMonster.png" />
+    <Content Include="Images\contactbeveledbutton.jpg" />
+    <Content Include="Images\contactflatterbutton.jpg" />
     <Content Include="Images\DJNixxx.png" />
     <Content Include="Images\Ellwood.jpg" />
-    <Content Include="Images\FlatterButton100px.png" />
     <Content Include="Images\GameFace321.png" />
     <Content Include="Images\GrievousAngels.png" />
     <Content Include="Images\horseflylogo.png" />
@@ -210,7 +210,11 @@
     <Content Include="Images\KhaosKings.png" />
     <Content Include="Images\largebanddisplayupdateApril2017.png" />
     <Content Include="Images\MandM_Logo.JPG" />
+    <Content Include="Images\missionbeveledbutton.jpg" />
+    <Content Include="Images\missionflatterbutton.jpg" />
     <Content Include="Images\MitchHayes.png" />
+    <Content Include="Images\musicbeveledbutton.jpg" />
+    <Content Include="Images\musicflatterbutton.jpg" />
     <Content Include="Images\RachelsRansom.png" />
     <Content Include="Images\RebelTherory.png" />
     <Content Include="Images\RemedyHollow321.png" />

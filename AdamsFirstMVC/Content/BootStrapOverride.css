@@ -70,6 +70,9 @@
     background-color: inherit;
 }
 @media all and (max-width:767px){
+    #larger-button-center-helper.nav.navbar-nav{display:none;}
+}
+@media all and (max-width:767px){
     #larger-content-center-helper.nav.navbar-nav{display:none;}
 }
 @media all and (min-width:767px){

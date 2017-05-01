@@ -1,15 +1,20 @@
 ﻿function mouseClicked(buttonName) {
     switch (buttonName) {
         case 'aboutButton': {
-            document.images[buttonName].src = "../../images/FlatterButton100px.png";
+            document.images[buttonName].src = "../../images/missionflatterbutton.jpg";
             break;
         }
         case 'bandsButton': {
-            document.images[buttonName].src = "../../images/FlatterButton100px.png";
+            document.images[buttonName].src = "../../images/musicflatterbutton.jpg";
             break;
         }
+        case 'dJButton':
+            {
+                document.images[buttonName].src = "../../images/musicflatterbutton.jpg";
+                break;
+            }
         case 'contactButton': {
-            document.images[buttonName].src = "../../images/FlatterButton100px.png";
+            document.images[buttonName].src = "../../images/contactflatterbutton.jpg";
             break;
         }
         default:
@@ -20,15 +25,20 @@
 function mouseUnclicked(buttonName) {
     switch (buttonName) {
         case 'aboutButton': {
-            document.images[buttonName].src = "../../images/BeveledButton100px.png";
+            document.images[buttonName].src = "../../images/missionflatterbutton.jpg";
             break;
         }
         case 'bandsButton': {
-            document.images[buttonName].src = "../../images/BeveledButton100px.png";
+            document.images[buttonName].src = "../../images/musicflatterbutton.jpg";
             break;
         }
+        case 'dJButton':
+            {
+                document.images[buttonName].src = "../../images/musicflatterbutton.jpg";
+                break;
+            }
         case 'contactButton': {
-            document.images[buttonName].src = "../../images/BeveledButton100px.png";
+            document.images[buttonName].src = "../../images/contactflatterbutton.jpg";
             break;
         }
         default:

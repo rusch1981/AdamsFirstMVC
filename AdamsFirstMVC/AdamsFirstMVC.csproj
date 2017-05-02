@@ -166,11 +166,15 @@
     <Compile Include="DAL\IGenericRepository.cs" />
     <Compile Include="DAL\GenericRepository.cs" />
     <Compile Include="DAL\MandMContext.cs" />
-    <Compile Include="DAL\MandMInitializer.cs" />
     <Compile Include="DAL\BandsUnitOfWork.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705010705504_InitialCreate.cs" />
+    <Compile Include="Migrations\201705010705504_InitialCreate.Designer.cs">
+      <DependentUpon>201705010705504_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutMandM.cs" />
     <Compile Include="Models\AboutMandMSetup.cs" />
     <Compile Include="Models\DJImage.cs" />
@@ -233,8 +237,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Properties\PublishProfiles\AdamsFirstMVC - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\AdamsFirstMVC20170422100854 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\AdamsProject - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\buttonRespond.js" />
@@ -310,6 +312,11 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705010705504_InitialCreate.resx">
+      <DependentUpon>201705010705504_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

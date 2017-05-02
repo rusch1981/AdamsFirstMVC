@@ -167,3 +167,5 @@ C:\Users\arusch\Documents\AdamsProjects\AdamsFirstMVC\AdamsFirstMVC\bin\Newtonso
 C:\Users\arusch\Documents\AdamsProjects\AdamsFirstMVC\AdamsFirstMVC\obj\Release\AdamsFirstMVC.csprojResolveAssemblyReference.cache
 C:\Users\arusch\Documents\AdamsProjects\AdamsFirstMVC\AdamsFirstMVC\obj\Release\AdamsFirstMVC.dll
 C:\Users\arusch\Documents\AdamsProjects\AdamsFirstMVC\AdamsFirstMVC\obj\Release\AdamsFirstMVC.pdb
+C:\Users\arusch\Documents\AdamsProjects\AdamsFirstMVC\AdamsFirstMVC\obj\Release\AdamsFirstMVC.Migrations.InitialCreate.resources
+C:\Users\arusch\Documents\AdamsProjects\AdamsFirstMVC\AdamsFirstMVC\obj\Release\AdamsFirstMVC.csproj.GenerateResource.Cache

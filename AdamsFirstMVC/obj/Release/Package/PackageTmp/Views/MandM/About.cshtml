@@ -1,0 +1,17 @@
+﻿@using AdamsFirstMVC.Models 
+@model AdamsFirstMVC.DAL.AboutUnitOfWork
+@{
+    ViewBag.Title = "About M&M Productions";
+    Layout = "~/Views/Shared/_LayoutMandMHome.cshtml";
+}
+
+<div class="jumbotron" id="inherit-background">
+    @foreach (var item in Model.GetAboutContentsfromSetup())
+    {
+        <h1 class="lead" id="top-padding">@Html.Raw(item.HeadingH1) </h1>
+
+        <h2 class="lead" id="top-padding"> @Html.Raw(item.HeadingH2) </h2>
+
+        <h3 class="lead" id="top-padding"> @Html.Raw(item.HeadingH3) </h3>
+    }
+</div>

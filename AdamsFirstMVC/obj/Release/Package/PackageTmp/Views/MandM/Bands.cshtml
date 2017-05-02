@@ -1,0 +1,61 @@
+﻿@using AdamsFirstMVC.Models
+@using Newtonsoft.Json
+@model  AdamsFirstMVC.DAL.BandsUnitOfWork
+@{
+    ViewBag.Title = "Bands";
+    Layout = "~/Views/Shared/_LayoutMandMHome.cshtml";
+}
+@section scripts{
+    <script>
+        window.onload = function () { imgAreaResponsizer(); };
+        window.onresize = function () {
+            //IE11 on 8.1 work around.  ugh.
+            if (realResize) {
+                imgAreaResponsizer();
+            }
+        };
+    </script>
+}
+
+@*<div class="jumbotron" id="inherit-background">
+    <h1>
+        Bands:
+    </h1>
+</div>*@
+
+<div id="smaller-content-helper" class="Band-content-helper">
+
+    @foreach (var item in Model.GetBandImagesfromSetup())
+    {
+        <div class="row">
+            <h2>@item.BandImageName</h2>
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <a href="@item.BandHref">
+                    <img src="@item.BandImageSrc" alt="@item.BandImageAlt" class="thumbnail img-responsive" title="@item.BandToolTip">
+                </a>
+            </div>
+        </div>
+    }
+
+</div>
+<div id="larger-content-center-helper" class="Band-content-helper">
+    <div class="row">
+        <div class="col-lg-12 col-sm-12 col-xs-12">
+
+            @{var collage = Model.GetSetupCollage();}
+
+            @{List<string> coords = Model.GetSetupClickableAreas().Select(x => x.ClickableAreaCoordinates).ToList();}
+
+            <img id="Collage" class="thumbnail img-responsive" src="@collage.CollageSrc" alt="@collage.CollageAlt"  usemap="#collageMap">
+            <map name="collageMap">
+
+                @foreach (var item in Model.GetSetupClickableAreas())
+                {
+                    <area class="areas" shape="@item.ClickableAreaShape" coords="@item.ClickableAreaCoordinates" href="@item.ClickableAreaHref" alt="@item.ClickableAreaAlt" title="@item.BandToolTip" />
+
+                }
+
+            </map>
+        </div>
+    </div>
+</div>

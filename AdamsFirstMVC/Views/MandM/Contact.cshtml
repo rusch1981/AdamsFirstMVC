@@ -1,9 +1,58 @@
-﻿@{
-    ViewBag.Title = "Bands";
+﻿@model AdamsFirstMVC.Models.Contact
+@{
+    ViewBag.Title = "Contact";
     Layout = "~/Views/Shared/_LayoutMandMHome.cshtml";
 }
 
-<div class="jumbotron" id="inherit-background">
-    <h2 id="top-padding">Under Construction...</h2>
-
-</div>
+<h2 id="top-padding">Send an Email</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="row contact field">
+        @Html.LabelFor(model => model.FirstName, "* First Name:  ",
+       new Dictionary<string, object>()
+       {
+           { "class", "contact field" }
+       } )
+        @Html.EditorFor(model => model.FirstName)
+        @Html.ValidationMessageFor(model => model.FirstName)
+    </div>
+    
+    <div class="row contact field">
+        @Html.LabelFor(model => model.LastName, "* Last Name:  ",
+       new Dictionary<string, object>()
+       {
+           { "class", "contact field" }
+       })
+        @Html.EditorFor(model => model.LastName)
+        @Html.ValidationMessageFor(model => model.LastName)
+    </div>
+    <div class="row contact field">
+        @Html.LabelFor(model => model.Email, "* Email:  ",
+       new Dictionary<string, object>()
+       {
+           { "class", "contact field" }
+       })
+        @Html.EditorFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+    <div class="row contact field">
+        @Html.LabelFor(model => model.Comment, "* Comments:  ",
+       new Dictionary<string, object>()
+       {
+           { "class", "contact field" }
+       } )
+    </div>
+    <div class="row contact field">
+        @Html.TextAreaFor(model => model.Comment,
+       new Dictionary<string, object>()
+       {
+           { "class", "contact field" }
+       })
+        @Html.ValidationMessageFor(model => model.Comment)
+    </div>
+    <div class="row contact field buttons">
+        <input class="contact button" type="submit" value="submit"/>
+        <input class="contact button" type="reset" value="reset"/>
+    </div>
+}

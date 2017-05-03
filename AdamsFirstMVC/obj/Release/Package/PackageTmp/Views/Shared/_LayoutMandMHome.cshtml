@@ -28,14 +28,14 @@
                     @* SET navbar route, view name and layout name (in that order)  *@
                     <li><a href="@Url.Action("About","MandM")" onmousedown="return mouseClicked('aboutButton')" onmouseup="return mouseUnclicked('aboutButton')"><img name="aboutButton" src="../../images/missionbeveledbutton.jpg" id="homepage-button-overrides" class="thumbnail img-responsive" alt="About"></a></li>
                     <li><a href="@Url.Action("Bands","MandM")"  onmousedown="return mouseClicked('bandsButton')" onmouseup="return mouseUnclicked('bandsButton')"><img name="bandsButton" src="../../images/musicbeveledbutton.jpg" id="homepage-button-overrides" class="thumbnail img-responsive" alt="Bands"></a></li>
-                    <li><a href="@Url.Action("DJs","MandM")"  onmousedown="return mouseClicked('dJButton')" onmouseup="return mouseUnclicked('dJButton')"><img name="dJButton" src="../../images/musicbeveledbutton.jpg" id="homepage-button-overrides" class="thumbnail img-responsive" alt="DJs"></a></li>
+                    <li><a href="@Url.Action("DJs","MandM")"  onmousedown="return mouseClicked('dJButton')" onmouseup="return mouseUnclicked('dJButton')"><img name="dJButton" src="../../images/djsbeveledbutton.jpg" id="homepage-button-overrides" class="thumbnail img-responsive" alt="DJs"></a></li>
                     <li><a href="@Url.Action("Contact","MandM")" onmousedown="return mouseClicked('contactButton')" onmouseup="return mouseUnclicked('contactButton')"><img name="contactButton" src="../../images/contactbeveledbutton.jpg" id="homepage-button-overrides" class="thumbnail img-responsive" alt="Contact"></a></li>
                 </ul>
                 <ul class="nav navbar-nav" id="smaller-content-helper">
                     @* SET string for navbar, set controller view method and controller name (in that order)  *@
                     <li>@Html.ActionLink("About", "About", "MandM")</li>
                     <li>@Html.ActionLink("Bands", "Bands", "MandM")</li>
-                    <li>@Html.ActionLink("Bands", "DJs", "MandM")</li>
+                    <li>@Html.ActionLink("DJ's", "DJs", "MandM")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "MandM")</li>
                 </ul>
                 @* default call to view loginPartial *@

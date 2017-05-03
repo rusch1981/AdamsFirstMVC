@@ -1,4 +1,45 @@
-﻿#homepage-navbar-overrides{
+﻿span.field-validation-error {
+    color: #FF0000;
+}
+div.row.contact.field
+{
+clear:left;
+margin:6px;
+}
+label.contact.field 
+{
+float:left;
+width:100px;
+}
+
+
+textarea.contact.field 
+{
+width:300px;
+height:100px;
+border: 2px solid #FFFFFF;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+div.buttons.contact.field
+{
+margin-top:16px;
+}
+input.contact.button {
+    width: 138px;
+    border: 2px solid #FFFFFF;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+input.text-box {
+    border: 2px solid #FFFFFF;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+
+#homepage-navbar-overrides{
     background-color: #000000;
     border-color: #808080;
     border-style:ridge;
@@ -22,12 +63,10 @@
 
 }
 
-/* place the ID at the following level to maintain button center alighnment ->.navbar .navbar-collapse*/ 
 #center-align-nav-content {
     text-align: center;
 }
 
-/*place this ID at the following level to maintain button center alighnment ->.navbar .navbar-nav*/ 
 #larger-content-center-helper {
     float: none;
 }
@@ -59,10 +98,10 @@
     color:#FFFFFF;
     
 }
-/*#top-padding {
+#top-padding {
     padding-top: 150px;
 }
-#bottom-margin {
+/*#bottom-margin {
     margin-bottom: 0px;
     padding-bottom:0px;
 }*/

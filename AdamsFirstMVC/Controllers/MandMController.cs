@@ -1,9 +1,7 @@
 ﻿using AdamsFirstMVC.DAL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using System.Net.Mail;
+using AdamsFirstMVC.Models;
 
 namespace AdamsFirstMVC.Controllers
 {
@@ -41,6 +39,15 @@ namespace AdamsFirstMVC.Controllers
 
         public ActionResult Contact()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Contact(Contact contact)
+        {
+            if (ModelState.IsValid)
+            {
+            }
             return View();
         }
     }

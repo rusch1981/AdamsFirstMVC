@@ -177,6 +177,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutMandM.cs" />
     <Compile Include="Models\AboutMandMSetup.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\DJImage.cs" />
     <Compile Include="Models\DJImageSetup.cs" />
     <Compile Include="Models\BandImageSetup.cs" />
@@ -204,6 +205,8 @@
     <Content Include="Images\contactbeveledbutton.jpg" />
     <Content Include="Images\contactflatterbutton.jpg" />
     <Content Include="Images\DJNixxx.png" />
+    <Content Include="Images\djsbeveledbutton.jpg" />
+    <Content Include="Images\djsflatterbutton.jpg" />
     <Content Include="Images\Ellwood.jpg" />
     <Content Include="Images\GameFace321.png" />
     <Content Include="Images\GrievousAngels.png" />

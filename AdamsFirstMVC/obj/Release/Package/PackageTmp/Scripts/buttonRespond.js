@@ -10,7 +10,7 @@
         }
         case 'dJButton':
             {
-                document.images[buttonName].src = "../../images/musicflatterbutton.jpg";
+                document.images[buttonName].src = "../../images/djsbeveledbutton.jpg";
                 break;
             }
         case 'contactButton': {
@@ -34,7 +34,7 @@ function mouseUnclicked(buttonName) {
         }
         case 'dJButton':
             {
-                document.images[buttonName].src = "../../images/musicflatterbutton.jpg";
+                document.images[buttonName].src = "../../images/djsflatterbutton.jpg";
                 break;
             }
         case 'contactButton': {

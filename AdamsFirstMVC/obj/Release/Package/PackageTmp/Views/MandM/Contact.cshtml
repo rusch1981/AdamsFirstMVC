@@ -9,23 +9,31 @@
 {
     @Html.ValidationSummary(true)
     <div class="row contact field">
-        @Html.LabelFor(model => model.FirstName, "* First Name:  ",
-       new Dictionary<string, object>()
-       {
-           { "class", "contact field" }
-       } )
-        @Html.EditorFor(model => model.FirstName)
         @Html.ValidationMessageFor(model => model.FirstName)
     </div>
-    
+    <div class="row contact field">
+        @Html.LabelFor(model => model.FirstName, "* First Name:  ",
+            new Dictionary<string, object>()
+            {
+                { "class", "contact field" }
+            })
+        @Html.EditorFor(model => model.FirstName)
+    </div>
+
+    <div class="row contact field">
+        @Html.ValidationMessageFor(model => model.LastName)
+    </div>
     <div class="row contact field">
         @Html.LabelFor(model => model.LastName, "* Last Name:  ",
-       new Dictionary<string, object>()
-       {
-           { "class", "contact field" }
-       })
+            new Dictionary<string, object>()
+            {
+                { "class", "contact field" }
+            })
         @Html.EditorFor(model => model.LastName)
-        @Html.ValidationMessageFor(model => model.LastName)
+    </div>
+
+    <div class="row contact field">
+        @Html.ValidationMessageFor(model => model.Email)
     </div>
     <div class="row contact field">
         @Html.LabelFor(model => model.Email, "* Email:  ",
@@ -34,25 +42,28 @@
            { "class", "contact field" }
        })
         @Html.EditorFor(model => model.Email)
-        @Html.ValidationMessageFor(model => model.Email)
     </div>
     <div class="row contact field">
         @Html.LabelFor(model => model.Comment, "* Comments:  ",
-       new Dictionary<string, object>()
-       {
-           { "class", "contact field" }
-       } )
+            new Dictionary<string, object>()
+            {
+                { "class", "contact field" }
+            })
+    </div>
+
+    <div class="row contact field">
+        @Html.ValidationMessageFor(model => model.Comment)
     </div>
     <div class="row contact field">
         @Html.TextAreaFor(model => model.Comment,
-       new Dictionary<string, object>()
-       {
-           { "class", "contact field" }
-       })
-        @Html.ValidationMessageFor(model => model.Comment)
+            new Dictionary<string, object>()
+            {
+                { "class", "contact field" }
+            })
     </div>
+
     <div class="row contact field buttons">
-        <input class="contact button" type="submit" value="submit"/>
-        <input class="contact button" type="reset" value="reset"/>
+        <input class="contact button" type="submit" value="submit" />
+        <input class="contact button" type="reset" value="reset" />
     </div>
 }

@@ -1,4 +1,5 @@
 ﻿@model AdamsFirstMVC.Models.Contact
+@using CaptchaMvc.HtmlHelpers
 @{
     ViewBag.Title = "Contact";
     Layout = "~/Views/Shared/_LayoutMandMHome.cshtml";
@@ -63,7 +64,8 @@
     </div>
 
     <div class="row contact field buttons">
-        <input class="contact button" type="submit" value="submit" />
-        <input class="contact button" type="reset" value="reset" />
+        @Html.Captcha(6)
+        <br/>
+        <input class="contact button" type="submit" value="submit"/>
     </div>
 }

@@ -1,17 +1,25 @@
 ﻿span.field-validation-error {
     color: #FF0000;
 }
+
 div.row.contact.field
 {
 clear:left;
 margin:6px;
 }
+
 label.contact.field 
 {
 float:left;
 width:100px;
 }
 
+#CaptchaInputText
+{
+border: 2px solid #FFFFFF;
+    background-color: #000000;
+    color: #FFFFFF;
+}
 
 textarea.contact.field 
 {

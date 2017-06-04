@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Net.Mail;
 using System.Text;
 using AdamsFirstMVC.Models;
+using CaptchaMvc.HtmlHelpers;
 
 namespace AdamsFirstMVC.Controllers
 {
@@ -49,6 +50,9 @@ namespace AdamsFirstMVC.Controllers
         [HttpPost]
         public ActionResult Contact(Contact contact)
         {
+            if (this.IsCaptchaValid("Validate your Captcha"))
+                ViewBag.ErrMessage = "Validation Message";
+
             if (ModelState.IsValid)
             {
                 try

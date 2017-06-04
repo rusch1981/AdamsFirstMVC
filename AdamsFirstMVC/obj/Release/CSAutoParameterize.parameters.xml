@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="MandMContext-Web.config Connection String" description="MandMContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=ITGCND6223G1M\ADAMDB;Initial Catalog=MandMContext2;Integrated Security=False; User id=sa; Password=Enterprize1; MultipleActiveResultSets=True" tags="SqlConnectionString">
+  <parameter name="MandMContext-Web.config Connection String" description="MandMContext Connection String used in web.config by the application to access the database." defaultValue="MandMContext_ConnectionString" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\arusch\\Documents\\AdamsProjects\\AdamsFirstMVC\\AdamsFirstMVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MandMContext']/@connectionString" />
   </parameter>
   <parameter name="MandMContext_DatabasePublish-Web.config Connection String" description="MandMContext_DatabasePublish Connection String used in web.config by the application to access the database." defaultValue="MandMContext_DatabasePublish.ConnetionString" tags="SqlConnectionString">

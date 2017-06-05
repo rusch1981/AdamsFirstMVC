@@ -13,7 +13,7 @@ namespace AdamsFirstMVC.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201705010705504_InitialCreate"; }
+            get { return "201706050116522_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

@@ -174,9 +174,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705010705504_InitialCreate.cs" />
-    <Compile Include="Migrations\201705010705504_InitialCreate.Designer.cs">
-      <DependentUpon>201705010705504_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201706050116522_InitialCreate.cs" />
+    <Compile Include="Migrations\201706050116522_InitialCreate.Designer.cs">
+      <DependentUpon>201706050116522_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutMandM.cs" />
@@ -219,7 +219,7 @@
     <Content Include="Images\JodyandJoanna.png" />
     <Content Include="Images\JukeboxJunkie.png" />
     <Content Include="Images\KhaosKings.png" />
-    <Content Include="Images\largebanddisplayupdateApril2017.png" />
+    <Content Include="Images\largebanddisplayupdateJune2017.png" />
     <Content Include="Images\MandM_Logo.JPG" />
     <Content Include="Images\missionbeveledbutton.jpg" />
     <Content Include="Images\missionflatterbutton.jpg" />
@@ -322,8 +322,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705010705504_InitialCreate.resx">
-      <DependentUpon>201705010705504_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706050116522_InitialCreate.resx">
+      <DependentUpon>201706050116522_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
